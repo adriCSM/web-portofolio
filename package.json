@@ -10,8 +10,11 @@
   "dependencies": {
     "@mdi/font": "5.9.55",
     "@mdi/js": "^7.2.96",
+    "@vueuse/motion": "^2.0.0",
     "core-js": "^3.8.3",
     "roboto-fontface": "*",
+    "scrollreveal": "^4.0.9",
+    "typed.js": "^2.0.16",
     "vue": "^3.3.4",
     "vue-router": "^4.0.3",
     "vuetify": "^3.0.0-beta.0",

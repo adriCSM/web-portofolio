@@ -1,10 +1,13 @@
 <template>
-  <div class="h-auto pt-10 bg-blue-grey-darken-3">
-    <v-container>
-      <h1 class="pa-1 font-weight-black" :class="data.h1">
-        <span>Thecnology</span>
+  <div class="h-auto py-10 bg-blue-grey-darken-3">
+    <v-container class="h-auto">
+      <h1 class="pa-1 font-weight-black heading" :class="data.h1">
+        <span class="light_blue">Technology</span> Studied
       </h1>
-      <v-row>
+      <h3 class="pa-1">
+        <span class="teknologi"></span>
+      </h3>
+      <v-row class="techno">
         <v-col cols="12">
           <v-tooltip :text="item.name" location="top" v-for="item in icon" :key="item">
             <template v-slot:activator="{ props }">
@@ -23,7 +26,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6">
+        <v-col cols="6" class="express">
           <v-tooltip text="Node JS Framework" location="top">
             <template v-slot:activator="{ props }">
               <v-icon
@@ -40,7 +43,7 @@
             </template>
           </v-tooltip>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="6" class="hapi">
           <v-tooltip text="Node JS Framework" location="top">
             <template v-slot:activator="{ props }">
               <v-icon
@@ -62,8 +65,9 @@
   </div>
 </template>
 <script>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import vuetify from '@/plugins/vuetify';
+import Typed from 'typed.js';
 export default {
   setup() {
     const icon = computed(() => [
@@ -95,10 +99,26 @@ export default {
         };
       } else {
         return {
-          h1: 'text-h3',
+          h1: 'text-h4',
         };
       }
     });
+
+    onMounted(() => {
+      const typed = new Typed('.teknologi', {
+        strings: [
+          'Dapat menggunakan technology HTML, CSS, Javascript, & Node Js',
+          'Javascript Framework Vue, framework Node Js Express & Hapi.',
+        ],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true,
+      });
+
+      typed.start();
+    });
+
     return {
       data,
       icon,

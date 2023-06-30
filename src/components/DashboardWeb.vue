@@ -1,30 +1,34 @@
 <template>
-  <div class="h-screen pt-10" :style="{ backgroundColor: '#1f242d' }">
+  <section class="h-screen pt-10" :style="{ backgroundColor: '#1f242d' }">
     <v-container class="h-screen">
       <v-row class="text-white d-flex align-center" :class="data.display">
-        <v-col cols="12" md="8" sm="8" :class="data.align" class="pt-15">
+        <v-col cols="12" md="8" sm="8" :class="data.align" class="pt-15 content-home">
           <h3 class="pa-2 font-weight-black" :class="data.h3">Hallo, My name is</h3>
           <h1 class="pa-2 font-weight-black" :class="data.h1">Adri C.S Mangidi</h1>
-          <h3 class="pa-2 font-weight-black" :class="data.h3">And I'am Back-End Developer.</h3>
+
+          <h3 class="pa-2 font-weight-black" :class="data.h3">
+            I'am <span class="light_blue typing"></span>
+          </h3>
+
           <p class="ps-2 font-weight-light">
-            I am a Mining Engineering student (018) at Haluoleo University
+            And, I am a Mining Engineering student (018) at Haluoleo University
           </p>
           <div>
-            <router-link to="#">
+            <a href="https://web.facebook.com/adricandrasaputramangidi" target="_blank">
               <v-icon color="#0fe" size="40" class="mx-2 my-2">mdi-facebook</v-icon>
-            </router-link>
-            <router-link to="#">
+            </a>
+            <a href="https://www.instagram.com/adri_csm/" target="_blank">
               <v-icon color="#0fe" size="40" class="mx-2 my-2">mdi-instagram</v-icon>
-            </router-link>
-            <router-link to="#">
+            </a>
+            <a href="https://www.linkedin.com/in/adri-candra-saputra-m-9696a3195/" target="_blank">
               <v-icon color="#0fe" size="40" class="mx-2 my-2">mdi-linkedin</v-icon>
-            </router-link>
-            <router-link to="#">
+            </a>
+            <a href="mailto:adricandrasaputramangidi@gmail.com">
               <v-icon color="#0fe" size="40" class="mx-2 my-2">mdi-email-outline</v-icon>
-            </router-link>
-            <router-link to="#">
+            </a>
+            <a href=" https://github.com/adriCSM" target="_blank">
               <v-icon color="#0fe" size="40" class="px-3">mdi-github</v-icon>
-            </router-link>
+            </a>
           </div>
           <v-btn
             class="rounded-pill text-black font-weight-bold my-5"
@@ -32,7 +36,7 @@
             >Download CV</v-btn
           >
         </v-col>
-        <v-col cols="12 " md="4" sm="4" :class="data.order1">
+        <v-col cols="12 " md="4" sm="4" :class="data.order1" class="home_img">
           <v-img
             src="../assets/image2.png"
             alt="Adri Candra Saputra Mangidi"
@@ -41,12 +45,13 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <script>
 import vuetify from '@/plugins/vuetify';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
+import Typed from 'typed.js';
 export default {
   setup() {
     const data = computed(() => {
@@ -71,9 +76,43 @@ export default {
       }
     });
 
+    onMounted(() => {
+      const el = document.querySelector('.typing');
+      console.log(el);
+      if (el) {
+        const typed = new Typed(el, {
+          strings: ['Programer', 'Backend Developer'],
+          typeSpeed: 100,
+          backSpeed: 100,
+          backDelay: 1000,
+          loop: true,
+        });
+
+        typed.start();
+      }
+    });
+
     return {
       data,
     };
   },
 };
 </script>
+
+<style scoped>
+.home_img {
+  animation: bounch 4s ease-in-out infinite;
+}
+
+@keyframes bounch {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+</style>

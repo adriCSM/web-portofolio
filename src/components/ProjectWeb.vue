@@ -1,22 +1,25 @@
 <template>
-  <div class="h-auto pt-10" :style="{ backgroundColor: '#1f242d' }">
+  <section class="pt-12" :style="{ backgroundColor: '#1f242d' }" :class="data.display">
     <v-container class="h-auto">
-      <h1 class="pa-1 text-white font-weight-black" :class="data.h1">
-        Latest <span class="light_blue">Project</span>
-      </h1>
+      <div>
+        <h1 class="pa-1 text-white font-weight-black heading" :class="data.h1">
+          Latest <span class="light_blue">Project</span>
+        </h1>
+      </div>
 
-      <v-row class="h-100 py-10">
+      <v-row class="my-10 ptoject">
         <v-col cols="12" sm="6" md="4" v-for="i in 6" :key="i" class="d-flex">
           <v-hover v-slot="{ isHovering, props }">
             <v-card
               class="mx-auto rounded-xl"
               color="grey-lighten-4"
               max-width="600"
+              max-height="250"
               v-bind="props"
             >
               <v-img
                 :class="isHovering ? 'zoom' : ''"
-                :aspect-ratio="16 / 9"
+                :aspect-ratio="16 / 16"
                 cover
                 src="../assets//bg.jpeg"
               >
@@ -38,7 +41,9 @@
                       Lorem ipsum dolor sit amet c
                     </p>
                     <router-link to="/">
-                      <v-icon color="white" size="20px">mdi-open-in-new</v-icon>
+                      <div class="pa-2 bg-white rounded-circle d-inline-block">
+                        <v-icon color="black" size="20px">mdi-open-in-new</v-icon>
+                      </div>
                     </router-link>
                   </div>
                 </v-expand-transition>
@@ -48,7 +53,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 <script>
 import { computed } from 'vue';
@@ -58,22 +63,24 @@ export default {
     const data = computed(() => {
       if (vuetify.display.width.value < 600) {
         return {
-          h1: 'text-h4 ',
-          h6: '20px',
-          p: '15px',
+          h1: 'text-h4',
+          h6: '18px',
+          p: '14px',
           order1: 'order-1 text-center text-justify',
           order2: 'order-2 ',
           height: '300',
           flex: 'h-auto d-flex flex-column align-center ',
+          display: 'h-auto',
         };
       } else {
         return {
-          h1: 'text-h3',
+          h1: 'text-h4',
           h6: '20px',
           p: '10px',
           order1: 'text-start',
           height: '400',
           flex: 'h-screen d-flex  align-center justify-center',
+          display: 'h-auto',
         };
       }
     });
