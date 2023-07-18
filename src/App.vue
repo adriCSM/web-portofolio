@@ -5,7 +5,7 @@
     </nav>
 
     <v-main>
-      <AlertWeb style="position: fixed; top: 50px; left: 0; z-index: 1" />
+      <AlertWeb style="position: fixed; top: 50px; left: 0; z-index: 1; height: auto" />
       <DashboardWeb id="home" />
       <AboutWeb id="about" data-tilt />
       <ProjectWeb id="project" />

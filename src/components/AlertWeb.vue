@@ -38,39 +38,42 @@ const timer = (mutation) => {
 </script>
 
 <template>
-  <div>
-    <v-alert
-      v-if="error"
-      color="red"
-      elevation="2"
-      type="warning"
-      border="start"
-      class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
-      >{{ error }}
-      <v-progress-linear v-model="progres_linear" bg-color="white" color="white">
-      </v-progress-linear
-    ></v-alert>
-    <v-alert
-      v-if="success"
-      color="success"
-      elevation="2"
-      type="success"
-      border="start"
-      class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
-      >{{ success }}
-      <v-progress-linear v-model="progres_linear" bg-color="white" color="white">
-      </v-progress-linear
-    ></v-alert>
-    <v-alert
-      v-if="info"
-      color="info"
-      elevation="2"
-      type="info"
-      border="start"
-      class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
-      >{{ info }}
-      <v-progress-linear v-model="progres_linear" bg-color="white" color="white">
-      </v-progress-linear
-    ></v-alert>
-  </div>
+  <v-row>
+    <v-col>
+      <v-alert
+        v-if="error"
+        color="red"
+        elevation="2"
+        type="warning"
+        border="start"
+        class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
+        >{{ error }}
+        <v-progress-linear v-model="progres_linear" color="white" absolute location="bottom">
+        </v-progress-linear>
+      </v-alert>
+
+      <v-alert
+        v-if="success"
+        color="success"
+        elevation="2"
+        type="success"
+        border="start"
+        class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
+        >{{ success }}
+        <v-progress-linear v-model="progres_linear" color="white" absolute location="bottom">
+        </v-progress-linear>
+      </v-alert>
+      <v-alert
+        v-if="info"
+        color="info"
+        elevation="2"
+        type="info"
+        border="start"
+        class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
+        >{{ info }}
+        <v-progress-linear v-model="progres_linear" color="white" absolute location="bottom">
+        </v-progress-linear>
+      </v-alert>
+    </v-col>
+  </v-row>
 </template>
