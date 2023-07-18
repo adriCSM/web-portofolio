@@ -7,7 +7,7 @@
         </h1>
       </div>
 
-      <v-row class="my-10 ptoject">
+      <v-row class="my-10">
         <v-col cols="12" sm="6" md="4" v-for="i in 6" :key="i" class="d-flex">
           <v-hover v-slot="{ isHovering, props }">
             <v-card
@@ -21,7 +21,7 @@
                 :class="isHovering ? 'zoom' : ''"
                 :aspect-ratio="16 / 16"
                 cover
-                src="../assets//bg.jpeg"
+                src="../../assets//bg.jpeg"
               >
                 <v-expand-transition>
                   <div

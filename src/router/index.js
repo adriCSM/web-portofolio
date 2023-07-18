@@ -4,23 +4,23 @@ const routes = [
   {
     hash: '#home',
     name: 'Home',
-    component: () => import('../components/DashboardWeb.vue'),
+    component: () => import('../components/layout/HomeWeb.vue'),
   },
   {
     hash: '#about',
     name: 'About',
-    component: () => import('../components/AboutWeb.vue'),
+    component: () => import('../components/layout/AboutWeb.vue'),
   },
   {
     hash: '#project',
     name: 'Project',
-    component: () => import('../components/ContactWeb.vue'),
+    component: () => import('../components/layout/ContactmeWeb.vue'),
   },
 
   {
     hash: '#contact',
     name: 'Contact',
-    component: () => import('../components/ContactWeb.vue'),
+    component: () => import('../components/layout/ContactmeWeb.vue'),
   },
 ];
 

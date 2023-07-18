@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex flex-column">
+  <v-container>
     <v-row>
       <v-col cols="10" sm="2" class="text-start pa-0" align-self="center">
         <router-link class="text-white" to="#home">
@@ -8,47 +8,45 @@
           </v-btn>
         </router-link>
       </v-col>
+      <v-spacer></v-spacer>
       <v-col cols="2" v-show="navHidden.show">
         <v-list-item>
           <v-btn variant="text" @click="klik" style="position: absolute; right: 0; top: 0">
-            <v-icon color="white" size="35"> mdi-menu </v-icon>
+            <v-icon color="white" size="25" v-if="show"> mdi-close </v-icon>
+            <v-icon color="white" size="35" v-else> mdi-menu </v-icon>
           </v-btn>
         </v-list-item>
       </v-col>
-      <v-expand-transition>
-        <v-col
-          cols="12"
-          sm="10"
-          class="pa-0"
-          :style="{ transform: navHidden.transform, transition: 'all 2s ease' }"
-          v-show="navHidden.show2 || show"
-        >
-          <v-list
-            class="d-flex pa-0 justify-end"
-            style="background-color: #1f242d"
-            :class="navHidden.flex"
+      <div>
+        <v-expand-x-transition>
+          <v-col
+            cols="12"
+            sm="10"
+            class="pa-0 shrink"
+            :style="{ transform: navHidden.transform }"
+            v-show="navHidden.show2 || show"
           >
-            <v-list-item
-              class="pa-0"
-              v-show="navHidden.show2 || show"
-              v-for="item in data"
-              :key="item"
+            <v-list
+              class="d-flex pa-0 justify-end"
+              style="background-color: #1f242d"
+              :class="navHidden.flex"
             >
-              <router-link class="text-white" aria-current="page" :to="item.to">
-                <v-btn
-                  class="w-auto text-capitalize"
-                  id="button"
-                  variant="text"
-                  :class="navHidden.width"
-                  @click="klik"
-                >
-                  {{ item.name }}
-                </v-btn>
-              </router-link>
-            </v-list-item>
-          </v-list>
-        </v-col>
-      </v-expand-transition>
+              <v-list-item class="pa-0" v-for="item in data" :key="item">
+                <router-link class="text-white" aria-current="page" :to="item.to">
+                  <v-btn
+                    class="w-auto text-capitalize"
+                    id="button"
+                    variant="text"
+                    :class="navHidden.width"
+                  >
+                    {{ item.name }}
+                  </v-btn>
+                </router-link>
+              </v-list-item>
+            </v-list>
+          </v-col>
+        </v-expand-x-transition>
+      </div>
     </v-row>
   </v-container>
 </template>
@@ -107,7 +105,7 @@ export default {
           show2: false,
           flex: 'flex-column',
           width: 'w-screen',
-          transform: 'translateY(-20px)',
+          transform: 'translateY(-10px)',
         };
       } else {
         return {

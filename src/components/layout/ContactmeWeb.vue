@@ -1,7 +1,7 @@
 <template>
   <section class="h-screen" :style="{ backgroundColor: '#1f242d' }">
     <v-container class="pt-15 d-flex flex-column justify-center align-center">
-      <h1 class="pa-1 text-white font-weight-black heading" :class="data.h1">
+      <h1 class="pa-1 text-white font-weight-black" :class="data.h1">
         Contact <span class="light_blue">Me</span>
       </h1>
 

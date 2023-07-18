@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import AboutWeb from './components/AboutWeb.vue';
-import ContactMeVue from './components/ContactWeb.vue';
-import DashboardWeb from './components/DashboardWeb.vue';
-import ProjectWeb from './components/ProjectWeb.vue';
-import ThecnologyWeb from './components/ThecnologyWeb.vue';
+import AboutWeb from './components/layout/AboutWeb.vue';
+import ContactMeVue from './components/layout/ContactmeWeb.vue';
+import DashboardWeb from './components/layout/HomeWeb.vue';
+import ProjectWeb from './components/layout/ProjectWeb.vue';
+import ThecnologyWeb from './components/layout/ThecnologyWeb.vue';
 import NavbarWeb from './components/NavbarWeb.vue';
 import FooterWebVue from './components/FooterWeb.vue';
 import { onMounted } from 'vue';
@@ -41,17 +41,11 @@ export default {
   },
   setup() {
     onMounted(() => {
-      scrollreveal().reveal('.content-home , .heading ', {
+      scrollreveal().reveal('.content-home , .heading , .about-img', {
         origin: 'top',
       });
-      scrollreveal().reveal('.home_img , .ptoject , .contact, .techno', {
+      scrollreveal().reveal('.home_img  , .techno , .express,.about_content, .hapi ', {
         origin: 'bottom',
-      });
-      scrollreveal().reveal('.content-home h1 , .about-img, .express', {
-        origin: 'left',
-      });
-      scrollreveal().reveal(' .about_content, .hapi', {
-        origin: 'right',
       });
     });
 

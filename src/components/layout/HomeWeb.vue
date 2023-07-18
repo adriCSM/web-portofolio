@@ -1,8 +1,8 @@
 <template>
-  <section class="h-screen pt-10" :style="{ backgroundColor: '#1f242d' }">
+  <section :style="{ backgroundColor: '#1f242d', minHeight: '100vh' }">
     <v-container class="h-screen">
       <v-row class="text-white d-flex align-center" :class="data.display">
-        <v-col cols="12" md="8" sm="8" :class="data.align" class="pt-15 content-home">
+        <v-col cols="12" md="8" sm="8" :class="data.align" class="content-home">
           <h3 class="pa-2 font-weight-black" :class="data.h3">Hallo, My name is</h3>
           <h1 class="pa-2 font-weight-black" :class="data.h1">Adri C.S Mangidi</h1>
 
@@ -38,7 +38,7 @@
         </v-col>
         <v-col cols="12 " md="4" sm="4" :class="data.order1" class="home_img">
           <v-img
-            src="../assets/image2.png"
+            src="../../assets/image2.png"
             alt="Adri Candra Saputra Mangidi"
             :height="data.height"
           />
