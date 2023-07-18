@@ -33,6 +33,7 @@
           <v-btn
             class="rounded-pill text-black font-weight-bold my-5 tilt"
             :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
+            @click="download"
             >Download CV</v-btn
           >
         </v-col>
@@ -48,54 +49,52 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import vuetify from '@/plugins/vuetify';
 import { computed, onMounted } from 'vue';
 import Typed from 'typed.js';
+import { useStore } from 'vuex';
 
-export default {
-  setup() {
-    const data = computed(() => {
-      if (vuetify.display.width.value < 600) {
-        return {
-          order1: 'order-1',
-
-          height: '200px',
-          h1: 'text-h5',
-          h3: 'text-h6',
-          align: 'text-center order-2',
-          display: 'h-auto mt-15',
-        };
-      } else {
-        return {
-          height: '450px',
-          h1: 'text-h4',
-          h3: 'text-h4',
-          align: 'text-start',
-          display: 'h-screen ',
-        };
-      }
-    });
-
-    onMounted(() => {
-      const el = document.querySelector('.typing');
-      if (el) {
-        const typed = new Typed(el, {
-          strings: ['Programer', 'Backend Developer'],
-          typeSpeed: 100,
-          backSpeed: 100,
-          backDelay: 1000,
-          loop: true,
-        });
-
-        typed.start();
-      }
-    });
-
+const data = computed(() => {
+  if (vuetify.display.width.value < 600) {
     return {
-      data,
+      order1: 'order-1',
+
+      height: '200px',
+      h1: 'text-h5',
+      h3: 'text-h6',
+      align: 'text-center order-2',
+      display: 'h-auto mt-15',
     };
-  },
+  } else {
+    return {
+      height: '450px',
+      h1: 'text-h4',
+      h3: 'text-h4',
+      align: 'text-start',
+      display: 'h-screen ',
+    };
+  }
+});
+
+onMounted(() => {
+  const el = document.querySelector('.typing');
+  if (el) {
+    const typed = new Typed(el, {
+      strings: ['Programer', 'Backend Developer'],
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true,
+    });
+
+    typed.start();
+  }
+});
+
+const store = useStore();
+const download = () => {
+  store.commit('info', 'Fitur ini masih dalam tahap pengembangan');
 };
 </script>
 

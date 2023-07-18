@@ -19,7 +19,6 @@
             variant="outlined"
             label="Fullname"
             :style="{ color: '#0fe' }"
-            :rules="[pesan.fullName ? true : 'Is Required']"
           >
           </v-text-field>
         </v-col>
@@ -34,7 +33,6 @@
             variant="outlined"
             label="Email"
             :style="{ color: '#0fe' }"
-            :rules="[pesan.email ? true : 'Is Required']"
           >
           </v-text-field>
         </v-col>
@@ -48,7 +46,6 @@
             variant="outlined"
             label="Mobile Number"
             :style="{ color: '#0fe' }"
-            :rules="[pesan.mobileNumber ? true : 'Is Required']"
           >
           </v-text-field>
         </v-col>
@@ -64,8 +61,7 @@
             label="Message"
             :style="{ color: '#0fe' }"
             counter="500"
-            :rules="[pesan.message && pesan.message.length > 500 ? 'Max 500 character' : true]"
-            rows="5"
+            rows="7"
           >
           </v-textarea>
         </v-col>
@@ -108,6 +104,16 @@ const data = computed(() => {
 const store = useStore();
 
 const send = () => {
-  store.commit('info', pesan.value.message);
+  if (
+    !pesan.value.fullName ||
+    !pesan.value.email ||
+    !pesan.value.mobileNumber ||
+    !pesan.value.message
+  ) {
+    return store.commit('error', 'Kolom input tidak boleh kosong');
+  }
+  console.log(pesan.value);
+  store.commit('success', `Pesan terkirim.`);
 };
+store.commit('info', `Selamat datang di web saya.`);
 </script>

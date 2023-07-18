@@ -5,7 +5,16 @@
     </nav>
 
     <v-main>
-      <AlertWeb style="position: fixed; top: 50px; left: 0; z-index: 1; height: auto" />
+      <AlertWeb
+        style="
+          position: fixed;
+          top: 50px;
+          left: 0;
+          z-index: 1;
+          min-height: max-content;
+          max-width: 400px;
+        "
+      />
       <DashboardWeb id="home" />
       <AboutWeb id="about" data-tilt />
       <ProjectWeb id="project" />
@@ -42,8 +51,8 @@ onMounted(() => {
   VanillaTilt.init(document.querySelectorAll('.tilt'), {
     axis: true,
     scale: 1.1,
-    speed: 600,
-    max: 25,
+    speed: 900,
+    max: 20,
     transition: true,
   });
 });

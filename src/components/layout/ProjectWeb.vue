@@ -88,7 +88,6 @@ const projects = ref();
 onMounted(async () => {
   const response = await axios.get('/portofolio/projects');
   projects.value = response.data.data.projects;
-  console.log(projects.value);
 });
 </script>
 <style scoped>

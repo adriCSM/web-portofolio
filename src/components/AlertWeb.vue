@@ -6,7 +6,7 @@ const store = useStore();
 const progres_linear = ref(0);
 const error = computed(() => {
   if (store.state.error) {
-    timer();
+    timer('error');
   }
   return store.state.error;
 });
@@ -58,7 +58,7 @@ const timer = (mutation) => {
         elevation="2"
         type="success"
         border="start"
-        class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
+        class="text-start text-white font-weight-light pa-3 mx-5 mt-5"
         >{{ success }}
         <v-progress-linear v-model="progres_linear" color="white" absolute location="bottom">
         </v-progress-linear>
@@ -69,7 +69,7 @@ const timer = (mutation) => {
         elevation="2"
         type="info"
         border="start"
-        class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
+        class="text-start text-white text-capitalize pa-3 mx-10 mt-5"
         >{{ info }}
         <v-progress-linear v-model="progres_linear" color="white" absolute location="bottom">
         </v-progress-linear>

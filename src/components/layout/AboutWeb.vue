@@ -29,6 +29,7 @@
           <v-btn
             class="rounded-pill text-black font-weight-bold my-10 about_content tilt"
             :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
+            @click="read"
             >Read more...</v-btn
           >
         </v-col>
@@ -37,51 +38,50 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { computed, onMounted } from 'vue';
 import vuetify from '@/plugins/vuetify';
 import Typed from 'typed.js';
+import { useStore } from 'vuex';
 
-export default {
-  setup() {
-    const data = computed(() => {
-      if (vuetify.display.width.value < 600) {
-        return {
-          h1: 'text-h5',
-          h4: 'text-h6',
-          order1: 'order-1 text-center text-start',
-          order2: 'order-2 ',
-          height: '200',
-          flex: 'h-auto d-flex flex-column align-center ',
-        };
-      } else {
-        return {
-          h1: 'text-h4',
-          h4: 'text-h5',
-          order1: 'text-start',
-          height: '400',
-          flex: 'h-screen d-flex  align-center justify-center',
-        };
-      }
-    });
-
-    onMounted(() => {
-      const el = document.querySelector('.title');
-      if (el) {
-        const typed = new Typed(el, {
-          strings: ['<span class="light_blue">Backend</span> Developer'],
-          typeSpeed: 100,
-          backSpeed: 100,
-          backDelay: 1000,
-          loop: true,
-        });
-
-        typed.start();
-      }
-    });
+const data = computed(() => {
+  if (vuetify.display.width.value < 600) {
     return {
-      data,
+      h1: 'text-h5',
+      h4: 'text-h6',
+      order1: 'order-1 text-center text-start',
+      order2: 'order-2 ',
+      height: '200',
+      flex: 'h-auto d-flex flex-column align-center ',
     };
-  },
+  } else {
+    return {
+      h1: 'text-h4',
+      h4: 'text-h5',
+      order1: 'text-start',
+      height: '400',
+      flex: 'h-screen d-flex  align-center justify-center',
+    };
+  }
+});
+
+onMounted(() => {
+  const el = document.querySelector('.title');
+  if (el) {
+    const typed = new Typed(el, {
+      strings: ['<span class="light_blue">Backend</span> Developer'],
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true,
+    });
+
+    typed.start();
+  }
+});
+
+const store = useStore();
+const read = () => {
+  store.commit('info', 'Fitur ini masih dalam tahap pengembangan');
 };
 </script>
