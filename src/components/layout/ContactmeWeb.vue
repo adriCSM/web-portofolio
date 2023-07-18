@@ -1,7 +1,10 @@
 <template>
-  <section class="h-screen" :style="{ backgroundColor: '#1f242d' }">
-    <v-container class="pt-15 d-flex flex-column justify-center align-center">
-      <h1 class="pa-1 text-white font-weight-black" :class="data.h1">
+  <section
+    :style="{ backgroundColor: '#1f242d', minHeight: '100vh' }"
+    class="d-flex flex-column justify-center align-center"
+  >
+    <v-container class="pt-15">
+      <h1 class="pa-1 text-white font-weight-black heading" :class="data.h1">
         Contact <span class="light_blue">Me</span>
       </h1>
 
@@ -68,7 +71,7 @@
         </v-col>
         <v-col cols="12">
           <v-btn
-            class="rounded-pill text-black font-weight-bold"
+            class="rounded-pill text-black font-weight-bold tilt"
             :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
             >Send</v-btn
           >
@@ -94,7 +97,7 @@ export default {
     const data = computed(() => {
       if (vuetify.display.width.value < 600) {
         return {
-          h1: 'text-h4',
+          h1: 'text-h5',
         };
       } else {
         return {

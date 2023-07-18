@@ -6,7 +6,7 @@
 
     <v-main>
       <DashboardWeb id="home" />
-      <AboutWeb id="about" />
+      <AboutWeb id="about" data-tilt />
       <ProjectWeb id="project" />
       <ThecnologyWeb />
       <ContactMeVue id="contact" />
@@ -27,6 +27,7 @@ import NavbarWeb from './components/NavbarWeb.vue';
 import FooterWebVue from './components/FooterWeb.vue';
 import { onMounted } from 'vue';
 import scrollreveal from 'scrollreveal';
+import VanillaTilt from 'vanilla-tilt';
 
 export default {
   name: 'App',
@@ -41,11 +42,19 @@ export default {
   },
   setup() {
     onMounted(() => {
-      scrollreveal().reveal('.content-home , .heading , .about-img', {
+      scrollreveal().reveal('.home_img , ', {
         origin: 'top',
       });
-      scrollreveal().reveal('.home_img  , .techno , .express,.about_content, .hapi ', {
+      scrollreveal().reveal(' .about_content,  , .content-home  , .about-img', {
         origin: 'bottom',
+      });
+
+      VanillaTilt.init(document.querySelectorAll('.tilt'), {
+        axis: true,
+        scale: 1.1,
+        speed: 600,
+        max: 25,
+        transition: true,
       });
     });
 
@@ -81,12 +90,6 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
 }
 
 .active {

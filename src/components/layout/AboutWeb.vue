@@ -13,15 +13,20 @@
           <h1 class="pa-1 font-weight-black heading" :class="data.h1">
             About <span class="light_blue">Me</span>
           </h1>
-          <h4 class="pa-1 font-weight-black pb-5 about_content" :class="h4">Back-End Developer</h4>
-          <p class="ps-2 about_content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, facilis
-            accusantium! Sit neque nihil exercitationem sed natus quos delectus. Iure at corporis
-            voluptatem quos fuga debitis possimus dolore. Dicta, incidunt!
+          <h4 class="pa-1 font-weight-black pb-3 about_content" :class="data.h4">
+            <span class="title"></span>
+          </h4>
+          <p class="pa-1 about_content font-weight-light" style="font-size: 14px; line-height: 2">
+            Saya adalah mahasiswa jurusan teknik pertambangan angkatan 2018 sekaligus
+            <span class="font-weight-bold light_blue">Backend Developer</span> dengan menggunakan
+            bahasa pemrograman <span class="font-weight-bold light_blue">Javascript</span>. Teknlogi
+            yang dapat saya gunakan dalam sisi frontend meliputi HTML, CSS, Javascript, dan
+            Framework Vue. Sementara di sisi backend yaitu Node Js dengan menggunakan framework
+            Express dan Hapi. Untuk database meliputi mySQL, postgreSQL, dan MongoDB.
           </p>
 
           <v-btn
-            class="rounded-pill text-black font-weight-bold my-10 about_content"
+            class="rounded-pill text-black font-weight-bold my-10 about_content tilt"
             :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
             >Read more...</v-btn
           >
@@ -32,28 +37,45 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import vuetify from '@/plugins/vuetify';
+import Typed from 'typed.js';
+
 export default {
   setup() {
     const data = computed(() => {
       if (vuetify.display.width.value < 600) {
         return {
-          h1: 'text-h4',
-          h4: 'text-h5',
+          h1: 'text-h5',
+          h4: 'text-h6',
           order1: 'order-1 text-center text-start',
           order2: 'order-2 ',
-          height: '300',
+          height: '200',
           flex: 'h-auto d-flex flex-column align-center ',
         };
       } else {
         return {
-          h1: 'text-h3',
+          h1: 'text-h4',
+          h4: 'text-h5',
           order1: 'text-start',
           height: '400',
           flex: 'h-screen d-flex  align-center justify-center',
-          h4: 'text-h4',
         };
+      }
+    });
+
+    onMounted(() => {
+      const el = document.querySelector('.title');
+      if (el) {
+        const typed = new Typed(el, {
+          strings: ['<span class="light_blue">Backend</span> Developer'],
+          typeSpeed: 100,
+          backSpeed: 100,
+          backDelay: 1000,
+          loop: true,
+        });
+
+        typed.start();
       }
     });
     return {

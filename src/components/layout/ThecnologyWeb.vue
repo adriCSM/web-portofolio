@@ -1,12 +1,13 @@
 <template>
   <div class="h-auto py-10 bg-blue-grey-darken-3">
     <v-container class="h-auto">
-      <h1 class="pa-1 font-weight-black heading" :class="data.h1">
+      <h1 class="pa-1 font-weight-black pb-3 heading" :class="data.h1">
         <span class="light_blue">Technology</span> Studied
       </h1>
-      <h3 class="pa-1">
+      <v-divider></v-divider>
+      <p class="pa-1">
         <span class="teknologi"></span>
-      </h3>
+      </p>
       <v-row class="techno">
         <v-col cols="12">
           <v-tooltip :text="item.name" location="top" v-for="item in icon" :key="item">
@@ -15,7 +16,7 @@
                 v-bind="props"
                 color="#0fe"
                 size="100"
-                class="mx-3 my-10"
+                class="mx-3 my-10 tilt"
                 :style="{ boxShadow: '0 0 1rem #0fe' }"
               >
                 {{ item.icons }}
@@ -26,7 +27,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" class="express">
+        <v-col cols="6">
           <v-tooltip text="Node JS Framework" location="top">
             <template v-slot:activator="{ props }">
               <v-icon
@@ -43,7 +44,7 @@
             </template>
           </v-tooltip>
         </v-col>
-        <v-col cols="6" class="hapi">
+        <v-col cols="6">
           <v-tooltip text="Node JS Framework" location="top">
             <template v-slot:activator="{ props }">
               <v-icon
@@ -95,7 +96,7 @@ export default {
     const data = computed(() => {
       if (vuetify.display.width.value < 600) {
         return {
-          h1: 'text-h4',
+          h1: 'text-h5',
         };
       } else {
         return {
@@ -107,12 +108,12 @@ export default {
     onMounted(() => {
       const typed = new Typed('.teknologi', {
         strings: [
-          'Dapat menggunakan technology HTML, CSS, Javascript, & Node Js',
-          'Javascript Framework Vue, framework Node Js Express & Hapi.',
+          'Dapat menggunakan teknologi HTML, CSS, Javascript, dan Node Js',
+          'Javascript Framework Vue, framework Node Js Express dan Hapi.',
         ],
-        typeSpeed: 100,
+        typeSpeed: 80,
         backSpeed: 100,
-        backDelay: 1000,
+        backDelay: 100,
         loop: true,
       });
 

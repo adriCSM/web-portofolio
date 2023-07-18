@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="10" sm="2" class="text-start pa-0" align-self="center">
         <router-link class="text-white" to="#home">
-          <v-btn class="font-weight-black light_blue" variant="text">
+          <v-btn class="font-weight-black light_blue tilt" variant="text">
             <span class="text-capitalize">Adri </span> CSM
           </v-btn>
         </router-link>
@@ -13,19 +13,13 @@
         <v-list-item>
           <v-btn variant="text" @click="klik" style="position: absolute; right: 0; top: 0">
             <v-icon color="white" size="25" v-if="show"> mdi-close </v-icon>
-            <v-icon color="white" size="35" v-else> mdi-menu </v-icon>
+            <v-icon color="white" size="30" v-else> mdi-menu </v-icon>
           </v-btn>
         </v-list-item>
       </v-col>
-      <div>
+      <v-col class="pt-0 ps-0 pb-0 tilt" cols="auto" :style="{ transform: navHidden.transform }">
         <v-expand-x-transition>
-          <v-col
-            cols="12"
-            sm="10"
-            class="pa-0 shrink"
-            :style="{ transform: navHidden.transform }"
-            v-show="navHidden.show2 || show"
-          >
+          <div class="pa-0 shrink" v-show="navHidden.show2 || show">
             <v-list
               class="d-flex pa-0 justify-end"
               style="background-color: #1f242d"
@@ -33,20 +27,15 @@
             >
               <v-list-item class="pa-0" v-for="item in data" :key="item">
                 <router-link class="text-white" aria-current="page" :to="item.to">
-                  <v-btn
-                    class="w-auto text-capitalize"
-                    id="button"
-                    variant="text"
-                    :class="navHidden.width"
-                  >
+                  <v-btn class="w-auto text-capitalize" id="button" variant="text">
                     {{ item.name }}
                   </v-btn>
                 </router-link>
               </v-list-item>
             </v-list>
-          </v-col>
+          </div>
         </v-expand-x-transition>
-      </div>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -104,13 +93,13 @@ export default {
           show: true,
           show2: false,
           flex: 'flex-column',
-          width: 'w-screen',
-          transform: 'translateY(-10px)',
+          transform: 'translateY(-7px)',
         };
       } else {
         return {
           show: false,
           show2: true,
+          transform: 'translateY(0px)',
         };
       }
     });

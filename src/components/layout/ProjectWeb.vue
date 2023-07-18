@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-12" :style="{ backgroundColor: '#1f242d' }" :class="data.display">
+  <section class="d-flex align-center" :style="{ backgroundColor: '#1f242d', minHeight: '100vh' }">
     <v-container class="h-auto">
       <div>
         <h1 class="pa-1 text-white font-weight-black heading" :class="data.h1">
@@ -7,7 +7,7 @@
         </h1>
       </div>
 
-      <v-row class="my-10">
+      <v-row class="my-5">
         <v-col cols="12" sm="6" md="4" v-for="i in 6" :key="i" class="d-flex">
           <v-hover v-slot="{ isHovering, props }">
             <v-card
@@ -63,14 +63,13 @@ export default {
     const data = computed(() => {
       if (vuetify.display.width.value < 600) {
         return {
-          h1: 'text-h4',
+          h1: 'text-h5',
           h6: '18px',
           p: '14px',
           order1: 'order-1 text-center text-justify',
           order2: 'order-2 ',
           height: '300',
           flex: 'h-auto d-flex flex-column align-center ',
-          display: 'h-auto',
         };
       } else {
         return {
@@ -80,7 +79,6 @@ export default {
           order1: 'text-start',
           height: '400',
           flex: 'h-screen d-flex  align-center justify-center',
-          display: 'h-auto',
         };
       }
     });

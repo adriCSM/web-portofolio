@@ -7,5 +7,5 @@ import { MotionPlugin } from '@vueuse/motion';
 import ScrollReveal from 'scrollreveal';
 
 loadFonts();
-ScrollReveal({ reset: true, distance: '80px', duration: 2000, delay: 100 });
+ScrollReveal({ reset: false, distance: '80px', duration: 2000, delay: 100 });
 createApp(App).use(router).use(ScrollReveal).use(MotionPlugin).use(vuetify).mount('#app');

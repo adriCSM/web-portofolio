@@ -3,7 +3,7 @@
     <v-container class="h-screen">
       <v-row class="text-white d-flex align-center" :class="data.display">
         <v-col cols="12" md="8" sm="8" :class="data.align" class="content-home">
-          <h3 class="pa-2 font-weight-black" :class="data.h3">Hallo, My name is</h3>
+          <h3 class="pa-2 font-weight-black" :class="data.h3">Hallo...👋, My name is</h3>
           <h1 class="pa-2 font-weight-black" :class="data.h1">Adri C.S Mangidi</h1>
 
           <h3 class="pa-2 font-weight-black" :class="data.h3">
@@ -31,7 +31,7 @@
             </a>
           </div>
           <v-btn
-            class="rounded-pill text-black font-weight-bold my-5"
+            class="rounded-pill text-black font-weight-bold my-5 tilt"
             :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
             >Download CV</v-btn
           >
@@ -52,6 +52,7 @@
 import vuetify from '@/plugins/vuetify';
 import { computed, onMounted } from 'vue';
 import Typed from 'typed.js';
+
 export default {
   setup() {
     const data = computed(() => {
@@ -68,7 +69,7 @@ export default {
       } else {
         return {
           height: '450px',
-          h1: 'text-h3',
+          h1: 'text-h4',
           h3: 'text-h4',
           align: 'text-start',
           display: 'h-screen ',
@@ -78,7 +79,6 @@ export default {
 
     onMounted(() => {
       const el = document.querySelector('.typing');
-      console.log(el);
       if (el) {
         const typed = new Typed(el, {
           strings: ['Programer', 'Backend Developer'],
