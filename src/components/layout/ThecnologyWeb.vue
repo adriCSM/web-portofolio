@@ -10,7 +10,7 @@
       </p>
       <v-row class="techno">
         <v-col cols="12">
-          <v-tooltip :text="item.name" location="top" v-for="item in icon" :key="item">
+          <v-tooltip :text="item.name" location="bottom" v-for="item in icon" :key="item">
             <template v-slot:activator="{ props }">
               <v-icon
                 v-bind="props"

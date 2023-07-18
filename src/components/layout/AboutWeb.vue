@@ -4,6 +4,7 @@
       <v-row :class="data.flex" class="">
         <v-col cols="12" sm="5" :class="data.order2" class="about-img">
           <v-img
+            class="tilt"
             src="../../assets/image2.png"
             alt="Adri Candra Saputra Mangidi"
             :height="data.height"

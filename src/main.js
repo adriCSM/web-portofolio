@@ -6,6 +6,9 @@ import router from './router';
 import { MotionPlugin } from '@vueuse/motion';
 import ScrollReveal from 'scrollreveal';
 import store from '@/store';
+import axios from 'axios';
+
+axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 
 loadFonts();
 ScrollReveal({ reset: false, distance: '80px', duration: 2000, delay: 100 });

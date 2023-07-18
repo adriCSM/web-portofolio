@@ -7,9 +7,9 @@
         </h1>
       </div>
 
-      <v-row class="my-5">
-        <v-col cols="12" sm="6" md="4" v-for="i in 6" :key="i" class="d-flex">
-          <v-hover v-slot="{ isHovering, props }">
+      <v-row class="my-5" justify="center">
+        <v-col cols="12" sm="6" md="4" v-for="project in projects" :key="project" class="d-flex">
+          <v-hover v-slot="{ isHovering, props }" v-if="project">
             <v-card
               class="mx-auto rounded-xl"
               color="grey-lighten-4"
@@ -21,7 +21,7 @@
                 :class="isHovering ? 'zoom' : ''"
                 :aspect-ratio="16 / 16"
                 cover
-                src="../../assets//bg.jpeg"
+                :src="project.image"
               >
                 <v-expand-transition>
                   <div
@@ -35,16 +35,16 @@
                     "
                   >
                     <h6 class="text-white pt-15" :style="{ fontSize: data.h6 }">
-                      API Open Music App
+                      {{ project.name }}
                     </h6>
                     <p class="px-10 text-white my-2" :style="{ fontSize: data.p }">
-                      Lorem ipsum dolor sit amet c
+                      {{ project.description }}
                     </p>
-                    <router-link to="/">
+                    <a :href="project.url_site" target="_blank">
                       <div class="pa-2 bg-white rounded-circle d-inline-block">
                         <v-icon color="black" size="20px">mdi-open-in-new</v-icon>
                       </div>
-                    </router-link>
+                    </a>
                   </div>
                 </v-expand-transition>
               </v-img>
@@ -55,38 +55,41 @@
     </v-container>
   </section>
 </template>
-<script>
-import { computed } from 'vue';
+<script setup>
+import { computed, onMounted, ref } from 'vue';
 import vuetify from '@/plugins/vuetify';
-export default {
-  setup() {
-    const data = computed(() => {
-      if (vuetify.display.width.value < 600) {
-        return {
-          h1: 'text-h5',
-          h6: '18px',
-          p: '14px',
-          order1: 'order-1 text-center text-justify',
-          order2: 'order-2 ',
-          height: '300',
-          flex: 'h-auto d-flex flex-column align-center ',
-        };
-      } else {
-        return {
-          h1: 'text-h4',
-          h6: '20px',
-          p: '10px',
-          order1: 'text-start',
-          height: '400',
-          flex: 'h-screen d-flex  align-center justify-center',
-        };
-      }
-    });
+import axios from 'axios';
+
+const data = computed(() => {
+  if (vuetify.display.width.value < 600) {
     return {
-      data,
+      h1: 'text-h5',
+      h6: '14px',
+      p: '12px',
+      order1: 'order-1 text-center text-justify',
+      order2: 'order-2 ',
+      height: '300',
+      flex: 'h-auto d-flex flex-column align-center ',
     };
-  },
-};
+  } else {
+    return {
+      h1: 'text-h4',
+      h6: '16px',
+      p: '14px',
+      order1: 'text-start',
+      height: '400',
+      flex: 'h-screen d-flex  align-center justify-center',
+    };
+  }
+});
+
+const projects = ref();
+
+onMounted(async () => {
+  const response = await axios.get('/portofolio/projects');
+  projects.value = response.data.data.projects;
+  console.log(projects.value);
+});
 </script>
 <style scoped>
 .zoom {

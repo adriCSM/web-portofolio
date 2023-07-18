@@ -17,7 +17,7 @@
           </v-btn>
         </v-list-item>
       </v-col>
-      <v-col class="pt-0 ps-0 pb-0 tilt" cols="auto" :style="{ transform: navHidden.transform }">
+      <v-col class="pt-0 ps-0 pb-0" cols="auto" :style="{ transform: navHidden.transform }">
         <v-expand-x-transition>
           <div class="pa-0 shrink" v-show="navHidden.show2 || show">
             <v-list

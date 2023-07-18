@@ -8,8 +8,8 @@
         Contact <span class="light_blue">Me</span>
       </h1>
 
-      <v-row class="my-10 contact">
-        <v-col cols="12" class="py-0" sm="12">
+      <v-row class="my-10 contact" justify="center">
+        <v-col cols="12" md="10" class="py-0" sm="12">
           <v-text-field
             type="text"
             name="name"
@@ -24,7 +24,7 @@
           </v-text-field>
         </v-col>
 
-        <v-col cols="12" class="py-0" sm="6">
+        <v-col cols="12" md="5" class="py-0" sm="6">
           <v-text-field
             type="email"
             name="email"
@@ -38,7 +38,7 @@
           >
           </v-text-field>
         </v-col>
-        <v-col cols="12" class="py-0" sm="6">
+        <v-col cols="12" md="5" class="py-0" sm="6">
           <v-text-field
             type="number"
             name="No.Hp"
@@ -53,7 +53,7 @@
           </v-text-field>
         </v-col>
 
-        <v-col cols="12">
+        <v-col cols="12" md="10">
           <v-textarea
             type="text"
             name="message"
