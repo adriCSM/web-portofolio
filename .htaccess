@@ -1,0 +1,11 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home1/areonemy/adri-csm.my.id"
+PassengerBaseURI "/"
+PassengerNodejs "/home1/areonemy/nodevenv/adri-csm.my.id/18/bin/node"
+PassengerAppType node
+PassengerStartupFile index.html
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
