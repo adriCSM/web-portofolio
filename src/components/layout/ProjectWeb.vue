@@ -6,6 +6,7 @@
           Latest <span class="light_blue">Project</span>
         </h1>
       </div>
+      <LoadData :show="show" />
 
       <v-row class="my-5" justify="center">
         <v-col cols="12" sm="6" md="4" v-for="project in projects" :key="project" class="d-flex">
@@ -59,6 +60,8 @@
 import { computed, onMounted, ref } from 'vue';
 import vuetify from '@/plugins/vuetify';
 import axios from 'axios';
+import LoadData from '@/components/LoadProgres.vue';
+import store from '@/store';
 
 const data = computed(() => {
   if (vuetify.display.width.value < 600) {
@@ -84,12 +87,20 @@ const data = computed(() => {
 });
 
 const projects = ref();
-
+const show = ref(true);
 onMounted(async () => {
-  const response = await axios.get('/portofolio/projects');
-  projects.value = response.data.data.projects;
+  await axios
+    .get('/portofolio/projects')
+    .then((response) => {
+      projects.value = response.data.data.projects;
+      show.value = false;
+    })
+    .catch((err) => {
+      store.commit('error', err.message);
+    });
 });
 </script>
+
 <style scoped>
 .zoom {
   transform: scale(1.2);

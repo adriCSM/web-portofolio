@@ -35,6 +35,8 @@ const timer = (mutation) => {
     }
   }, 40);
 };
+
+store.commit('info', `Selamat datang.`);
 </script>
 
 <template>

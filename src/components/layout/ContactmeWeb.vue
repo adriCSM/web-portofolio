@@ -112,8 +112,6 @@ const send = () => {
   ) {
     return store.commit('error', 'Kolom input tidak boleh kosong');
   }
-  console.log(pesan.value);
   store.commit('success', `Pesan terkirim.`);
 };
-store.commit('info', `Selamat datang di web saya.`);
 </script>

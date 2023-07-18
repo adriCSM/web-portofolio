@@ -16,7 +16,7 @@
         "
       />
       <DashboardWeb id="home" />
-      <AboutWeb id="about" data-tilt />
+      <AboutWeb id="about" />
       <ProjectWeb id="project" />
       <ThecnologyWeb />
       <ContactMeVue id="contact" />
