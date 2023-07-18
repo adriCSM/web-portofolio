@@ -110,8 +110,8 @@ const send = () => {
     !pesan.value.mobileNumber ||
     !pesan.value.message
   ) {
-    return store.commit('error', 'Kolom input tidak boleh kosong');
+    store.commit('info', 'Fitur ini masih dalam tahap pengembangan');
   }
-  store.commit('success', `Pesan terkirim.`);
+  store.commit('info', 'Fitur ini masih dalam tahap pengembangan');
 };
 </script>
