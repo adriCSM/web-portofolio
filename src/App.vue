@@ -5,6 +5,7 @@
     </nav>
 
     <v-main>
+      <AlertWeb style="position: fixed; top: 50px; left: 0; z-index: 1" />
       <DashboardWeb id="home" />
       <AboutWeb id="about" data-tilt />
       <ProjectWeb id="project" />
@@ -17,7 +18,7 @@
   </v-app>
 </template>
 
-<script>
+<script setup>
 import AboutWeb from './components/layout/AboutWeb.vue';
 import ContactMeVue from './components/layout/ContactmeWeb.vue';
 import DashboardWeb from './components/layout/HomeWeb.vue';
@@ -28,39 +29,24 @@ import FooterWebVue from './components/FooterWeb.vue';
 import { onMounted } from 'vue';
 import scrollreveal from 'scrollreveal';
 import VanillaTilt from 'vanilla-tilt';
+import AlertWeb from '@/components/AlertWeb.vue';
 
-export default {
-  name: 'App',
-  components: {
-    AboutWeb,
-    ContactMeVue,
-    DashboardWeb,
-    ProjectWeb,
-    ThecnologyWeb,
-    NavbarWeb,
-    FooterWebVue,
-  },
-  setup() {
-    onMounted(() => {
-      scrollreveal().reveal('.home_img , ', {
-        origin: 'top',
-      });
-      scrollreveal().reveal(' .about_content,  , .content-home  , .about-img', {
-        origin: 'bottom',
-      });
+onMounted(() => {
+  scrollreveal().reveal('.home_img , ', {
+    origin: 'top',
+  });
+  scrollreveal().reveal(' .about_content,  , .content-home  , .about-img', {
+    origin: 'bottom',
+  });
 
-      VanillaTilt.init(document.querySelectorAll('.tilt'), {
-        axis: true,
-        scale: 1.1,
-        speed: 600,
-        max: 25,
-        transition: true,
-      });
-    });
-
-    return {};
-  },
-};
+  VanillaTilt.init(document.querySelectorAll('.tilt'), {
+    axis: true,
+    scale: 1.1,
+    speed: 600,
+    max: 25,
+    transition: true,
+  });
+});
 </script>
 
 <style>

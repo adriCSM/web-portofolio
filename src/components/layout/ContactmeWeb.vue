@@ -14,12 +14,12 @@
             type="text"
             name="name"
             required
-            v-model="fullName"
+            v-model="pesan.fullName"
             placeholder="Type your full name"
             variant="outlined"
             label="Fullname"
             :style="{ color: '#0fe' }"
-            :rules="[fullName ? true : 'Is Required']"
+            :rules="[pesan.fullName ? true : 'Is Required']"
           >
           </v-text-field>
         </v-col>
@@ -29,12 +29,12 @@
             type="email"
             name="email"
             required
-            v-model="email"
+            v-model="pesan.email"
             placeholder="Type your email address"
             variant="outlined"
             label="Email"
             :style="{ color: '#0fe' }"
-            :rules="[email ? true : 'Is Required']"
+            :rules="[pesan.email ? true : 'Is Required']"
           >
           </v-text-field>
         </v-col>
@@ -43,12 +43,12 @@
             type="number"
             name="No.Hp"
             required
-            v-model="mobileNumber"
+            v-model="pesan.mobileNumber"
             placeholder="Type your mobile number"
             variant="outlined"
             label="Mobile Number"
             :style="{ color: '#0fe' }"
-            :rules="[mobileNumber ? true : 'Is Required']"
+            :rules="[pesan.mobileNumber ? true : 'Is Required']"
           >
           </v-text-field>
         </v-col>
@@ -58,13 +58,13 @@
             type="text"
             name="message"
             required
-            v-model="message"
+            v-model="pesan.message"
             placeholder="Type your message"
             variant="outlined"
             label="Message"
             :style="{ color: '#0fe' }"
             counter="500"
-            :rules="[message && message.length > 500 ? 'Max 500 character' : true]"
+            :rules="[pesan.message && pesan.message.length > 500 ? 'Max 500 character' : true]"
             rows="5"
           >
           </v-textarea>
@@ -73,6 +73,7 @@
           <v-btn
             class="rounded-pill text-black font-weight-bold tilt"
             :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
+            @click="send"
             >Send</v-btn
           >
         </v-col>
@@ -81,34 +82,32 @@
   </section>
 </template>
 
-<script>
-import { computed } from 'vue';
+<script setup>
+import { computed, ref } from 'vue';
 import vuetify from '@/plugins/vuetify';
-export default {
-  data() {
+import { useStore } from 'vuex';
+
+const pesan = ref({
+  fullName: '',
+  email: '',
+  mobileNumber: '',
+  message: '',
+});
+
+const data = computed(() => {
+  if (vuetify.display.width.value < 600) {
     return {
-      fullName: '',
-      email: '',
-      mobileNumber: '',
-      message: '',
+      h1: 'text-h5',
     };
-  },
-  setup() {
-    const data = computed(() => {
-      if (vuetify.display.width.value < 600) {
-        return {
-          h1: 'text-h5',
-        };
-      } else {
-        return {
-          h1: 'text-h4',
-        };
-      }
-    });
+  } else {
     return {
-      data,
+      h1: 'text-h4',
     };
-  },
+  }
+});
+const store = useStore();
+
+const send = () => {
+  store.commit('info', pesan.value.message);
 };
 </script>
-<style></style>
