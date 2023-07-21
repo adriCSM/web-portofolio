@@ -14,7 +14,7 @@
             type="text"
             name="name"
             required
-            v-model="pesan.fullName"
+            v-model="pesan.name"
             placeholder="Type your full name"
             variant="outlined"
             label="Fullname"
@@ -82,9 +82,10 @@
 import { computed, ref } from 'vue';
 import vuetify from '@/plugins/vuetify';
 import { useStore } from 'vuex';
+import axios from 'axios';
 
 const pesan = ref({
-  fullName: '',
+  name: '',
   email: '',
   mobileNumber: '',
   message: '',
@@ -103,15 +104,33 @@ const data = computed(() => {
 });
 const store = useStore();
 
-const send = () => {
-  if (
-    !pesan.value.fullName ||
-    !pesan.value.email ||
-    !pesan.value.mobileNumber ||
-    !pesan.value.message
-  ) {
-    store.commit('info', 'Fitur ini masih dalam tahap pengembangan');
-  }
-  store.commit('info', 'Fitur ini masih dalam tahap pengembangan');
+const send = async () => {
+  await axios
+    .post(
+      '/portofolio/messages',
+      { ...pesan.value },
+      {
+        headers: {
+          Accept: ['aplication/json'],
+        },
+      },
+    )
+    .then((response) => {
+      store.commit('success', response.data.message);
+      pesan.value = {
+        ...pesan.value,
+        name: '',
+        email: '',
+        mobileNumber: '',
+        message: '',
+      };
+    })
+    .catch((err) => {
+      if (err.response) {
+        store.commit('error', err.response.data.message);
+      } else {
+        store.commit('error', err.message);
+      }
+    });
 };
 </script>
