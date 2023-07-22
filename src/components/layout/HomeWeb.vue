@@ -30,11 +30,13 @@
               <v-icon color="#0fe" size="40" class="px-3">mdi-github</v-icon>
             </a>
           </div>
-          <v-btn
-            class="rounded-pill text-black font-weight-bold my-5 tilt"
-            :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
-            @click="download"
-            >Download CV</v-btn
+
+          <a :href="require('../../assets/cv.jpg')" download="Adri Candra Saputra Mangidi">
+            <v-btn
+              class="rounded-pill text-black font-weight-bold my-5 tilt"
+              :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
+              ><v-icon>mdi-download</v-icon>Download CV
+            </v-btn></a
           >
         </v-col>
         <v-col cols="12 " md="4" sm="4" :class="data.order1" class="home_img">
@@ -53,7 +55,6 @@
 import vuetify from '@/plugins/vuetify';
 import { computed, onMounted } from 'vue';
 import Typed from 'typed.js';
-import { useStore } from 'vuex';
 
 const data = computed(() => {
   if (vuetify.display.width.value < 600) {
@@ -91,11 +92,6 @@ onMounted(() => {
     typed.start();
   }
 });
-
-const store = useStore();
-const download = () => {
-  store.commit('info', 'Fitur ini masih dalam tahap pengembangan');
-};
 </script>
 
 <style scoped>
