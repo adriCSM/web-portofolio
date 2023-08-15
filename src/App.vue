@@ -1,6 +1,14 @@
 <template>
   <v-app>
-    <nav :style="{ backgroundColor: '#1f242d', height: '60px' }" class="d-fixed pa-0">
+    <nav
+      style="
+        background-color: #1f242d05;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: (25px);
+        height: 60px;
+      "
+      class="d-fixed pa-0"
+    >
       <NavbarWeb />
     </nav>
 

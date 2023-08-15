@@ -22,8 +22,8 @@
           <div class="pa-0 shrink" v-show="navHidden.show2 || show">
             <v-list
               class="d-flex pa-0 justify-end"
-              style="background-color: #1f242d"
               :class="navHidden.flex"
+              :style="navHidden.style"
             >
               <v-list-item class="pa-0" v-for="item in data" :key="item">
                 <router-link class="text-white" aria-current="page" :to="item.to">
@@ -94,12 +94,18 @@ export default {
           show2: false,
           flex: 'flex-column',
           transform: 'translateY(-7px)',
+          style: { backgroundColor: '#1f242d' },
         };
       } else {
         return {
           show: false,
           show2: true,
           transform: 'translateY(0px)',
+          style: {
+            backgroundColor: '#1f242d05',
+            backdropFilter: 'blur(15px)',
+            webkitBackdropFilter: 'blur(25px)',
+          },
         };
       }
     });
