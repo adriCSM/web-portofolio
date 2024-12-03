@@ -41,7 +41,7 @@
         </v-col>
         <v-col cols="12 " md="4" sm="4" :class="data.order1" class="home_img">
           <v-img
-            src="../../assets/image2.png"
+            src="../../assets/adri.png"
             alt="Adri Candra Saputra Mangidi"
             :height="data.height"
           />
