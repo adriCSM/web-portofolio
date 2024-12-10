@@ -2,25 +2,16 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
-    hash: '#home',
+    path: '/',
     name: 'Home',
-    component: () => import('../components/layout/HomeWeb.vue'),
-  },
-  {
-    hash: '#about',
-    name: 'About',
-    component: () => import('../components/layout/AboutWeb.vue'),
-  },
-  {
-    hash: '#project',
-    name: 'Project',
-    component: () => import('../components/layout/ContactmeWeb.vue'),
+    component: () => import('../components/pages/HomePage.vue'),
   },
 
   {
-    hash: '#contact',
-    name: 'Contact',
-    component: () => import('../components/layout/ContactmeWeb.vue'),
+    path: '/about',
+    name: 'About',
+
+    component: () => import('../components/pages/DetileAbout.vue'),
   },
 ];
 
@@ -30,6 +21,7 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     from;
     savedPosition;
+
     if (to.hash) {
       document.title = 'Adri CSM';
       return {
@@ -41,7 +33,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.hash) {
+  if (to.name || to.hash) {
     next();
   }
 });

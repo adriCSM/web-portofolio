@@ -1,52 +1,13 @@
 <template>
   <v-app>
-    <nav
-      style="
-        background-color: #1f242d05;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: (25px);
-        height: 60px;
-      "
-      class="d-fixed pa-0"
-    >
-      <NavbarWeb />
-    </nav>
-
-    <v-main>
-      <AlertWeb
-        style="
-          position: fixed;
-          top: 50px;
-          left: 0;
-          z-index: 1;
-          min-height: max-content;
-          max-width: 400px;
-        "
-      />
-      <DashboardWeb id="home" />
-      <AboutWeb id="about" />
-      <ProjectWeb id="project" />
-      <ThecnologyWeb />
-      <ContactMeVue id="contact" />
-    </v-main>
-    <footer>
-      <FooterWebVue />
-    </footer>
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script setup>
-import AboutWeb from './components/layout/AboutWeb.vue';
-import ContactMeVue from './components/layout/ContactmeWeb.vue';
-import DashboardWeb from './components/layout/HomeWeb.vue';
-import ProjectWeb from './components/layout/ProjectWeb.vue';
-import ThecnologyWeb from './components/layout/ThecnologyWeb.vue';
-import NavbarWeb from './components/NavbarWeb.vue';
-import FooterWebVue from './components/FooterWeb.vue';
 import { onMounted } from 'vue';
 import scrollreveal from 'scrollreveal';
 import VanillaTilt from 'vanilla-tilt';
-import AlertWeb from '@/components/AlertWeb.vue';
 
 onMounted(() => {
   scrollreveal().reveal('.home_img , ', {

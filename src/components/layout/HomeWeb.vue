@@ -7,7 +7,7 @@
           <h1 class="pa-2 font-weight-black" :class="data.h1">Adri C.S Mangidi</h1>
 
           <h3 class="pa-2 font-weight-black" :class="data.h3">
-            I'am <span class="light_blue typing"></span>
+            I'am <span class="light_blue typing2"></span>
           </h3>
 
           <p class="ps-2 font-weight-light">
@@ -31,11 +31,21 @@
             </a>
           </div>
 
-          <a :href="require('../../assets/cv.jpg')" download="Adri Candra Saputra Mangidi">
+          <a :href="require('../../assets/cv.png')" download="Adri Candra Saputra Mangidi">
+            <v-btn
+              class="rounded-pill text-black font-weight-bold my-5 me-2 tilt"
+              :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
+              ><v-icon>mdi-download</v-icon>Download CV 1
+            </v-btn></a
+          >
+          <a
+            :href="require('../../assets/CV_Programming.png')"
+            download="Adri Candra Saputra Mangidi"
+          >
             <v-btn
               class="rounded-pill text-black font-weight-bold my-5 tilt"
               :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
-              ><v-icon>mdi-download</v-icon>Download CV
+              ><v-icon>mdi-download</v-icon>Download CV 2
             </v-btn></a
           >
         </v-col>
@@ -79,12 +89,12 @@ const data = computed(() => {
 });
 
 onMounted(() => {
-  const el = document.querySelector('.typing');
+  const el = document.querySelector('.typing2');
   if (el) {
     const typed = new Typed(el, {
       strings: ['Programer', 'Backend Developer'],
-      typeSpeed: 100,
-      backSpeed: 100,
+      typeSpeed: 200,
+      backSpeed: 200,
       backDelay: 1000,
       loop: true,
     });
