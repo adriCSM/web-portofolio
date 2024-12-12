@@ -1,14 +1,12 @@
 <template>
   <section :style="{ backgroundColor: '#1f242d', minHeight: '100vh' }">
     <v-container class="h-screen">
-      <v-row class="text-white d-flex align-center" :class="data.display">
-        <v-col cols="12" md="8" sm="8" :class="data.align" class="content-home">
-          <h3 class="pa-2 font-weight-black" :class="data.h3">Hallo...👋, My name is</h3>
-          <h1 class="pa-2 font-weight-black" :class="data.h1">Adri C.S Mangidi</h1>
+      <v-row class="text-white d-flex align-center">
+        <v-col cols="12" md="8" sm="8" class="content-home">
+          <h3 class="pa-2 font-weight-black">Hallo...👋, My name is</h3>
+          <h1 class="pa-2 font-weight-black">Adri C.S Mangidi</h1>
 
-          <h3 class="pa-2 font-weight-black" :class="data.h3">
-            I'am <span class="light_blue typing2"></span>
-          </h3>
+          <h3 class="pa-2 font-weight-black">I'am <span class="light_blue typing2"></span></h3>
 
           <p class="ps-2 font-weight-light">
             And, I am a Mining Engineering student (018) at Haluoleo University
@@ -31,17 +29,14 @@
             </a>
           </div>
 
-          <a :href="require('../../assets/cv.png')" download="Adri Candra Saputra Mangidi">
+          <a :href="'../../assets/cv.png'" download="Adri Candra Saputra Mangidi">
             <v-btn
               class="rounded-pill text-black font-weight-bold my-5 me-2 tilt"
               :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
               ><v-icon>mdi-download</v-icon>Download CV 1
             </v-btn></a
           >
-          <a
-            :href="require('../../assets/CV_Programming.png')"
-            download="Adri Candra Saputra Mangidi"
-          >
+          <a :href="'../../assets/CV_Programming.png'" download="Adri Candra Saputra Mangidi">
             <v-btn
               class="rounded-pill text-black font-weight-bold my-5 tilt"
               :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
@@ -49,12 +44,8 @@
             </v-btn></a
           >
         </v-col>
-        <v-col cols="12 " md="4" sm="4" :class="data.order1" class="home_img">
-          <v-img
-            src="../../assets/adri.png"
-            alt="Adri Candra Saputra Mangidi"
-            :height="data.height"
-          />
+        <v-col cols="12 " md="4" sm="4" class="home_img">
+          <v-img src="../../assets/adri.png" alt="Adri Candra Saputra Mangidi" />
         </v-col>
       </v-row>
     </v-container>
@@ -62,30 +53,8 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import Typed from 'typed.js';
-
-const data = computed(() => {
-  if (vuetify.display.width.value < 600) {
-    return {
-      order1: 'order-1',
-
-      height: '200px',
-      h1: 'text-h5',
-      h3: 'text-h6',
-      align: 'text-center order-2',
-      display: 'h-auto mt-15',
-    };
-  } else {
-    return {
-      height: '450px',
-      h1: 'text-h4',
-      h3: 'text-h4',
-      align: 'text-start',
-      display: 'h-screen ',
-    };
-  }
-});
 
 onMounted(() => {
   const el = document.querySelector('.typing2');
