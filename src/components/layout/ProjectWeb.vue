@@ -58,10 +58,9 @@
 </template>
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import vuetify from '@/plugins/vuetify';
 import axios from 'axios';
-import LoadData from '@/components/LoadProgres.vue';
-import store from '@/store';
+import LoadData from '../LoadProgres.vue';
+import store from '../../store';
 
 const data = computed(() => {
   if (vuetify.display.width.value < 600) {

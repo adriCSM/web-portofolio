@@ -9,13 +9,6 @@ import { onMounted } from 'vue';
 import VanillaTilt from 'vanilla-tilt';
 
 onMounted(() => {
-  scrollreveal().reveal('.home_img , ', {
-    origin: 'top',
-  });
-  scrollreveal().reveal(' .about_content,  , .content-home  , .about-img', {
-    origin: 'bottom',
-  });
-
   VanillaTilt.init(document.querySelectorAll('.tilt'), {
     axis: true,
     scale: 1.1,

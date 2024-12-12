@@ -43,7 +43,7 @@ import ProjectWeb from '../layout/ProjectWeb.vue';
 import ThecnologyWeb from '../layout/ThecnologyWeb.vue';
 import NavbarWeb from '../NavbarWeb.vue';
 import FooterWebVue from '../FooterWeb.vue';
-import AlertWeb from '@/components/AlertWeb.vue';
+import AlertWeb from '../AlertWeb.vue';
 import { onMounted } from 'vue';
 import Typed from 'typed.js';
 

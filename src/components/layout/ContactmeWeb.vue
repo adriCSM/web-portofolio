@@ -80,7 +80,6 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import vuetify from '@/plugins/vuetify';
 import { useStore } from 'vuex';
 import axios from 'axios';
 

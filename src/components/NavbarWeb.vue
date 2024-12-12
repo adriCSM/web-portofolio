@@ -42,7 +42,7 @@
 
 <script>
 import { computed, onMounted, ref } from 'vue';
-import vuetify from '@/plugins/vuetify';
+import vuetify from 'vuetify';
 export default {
   setup() {
     const data = ref([

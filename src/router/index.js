@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-console.log(process.env.BASE_URL);
+
 const routes = [
   {
     path: '/',
@@ -16,7 +16,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
     from;

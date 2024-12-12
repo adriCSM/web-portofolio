@@ -67,7 +67,7 @@
 </template>
 <script setup>
 import { computed, onMounted } from 'vue';
-import vuetify from '@/plugins/vuetify';
+
 import Typed from 'typed.js';
 
 const icon = computed(() => [
