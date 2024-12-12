@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
+console.log(process.env.BASE_URL);
 const routes = [
   {
     path: '/',

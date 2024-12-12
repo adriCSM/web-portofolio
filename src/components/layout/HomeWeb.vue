@@ -62,7 +62,6 @@
 </template>
 
 <script setup>
-import vuetify from '@/plugins/vuetify';
 import { computed, onMounted } from 'vue';
 import Typed from 'typed.js';
 
