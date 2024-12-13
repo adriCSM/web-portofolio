@@ -1,17 +1,8 @@
 <template>
   <div>
-    <nav
-      style="
-        background-color: #1f242d05;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: (25px);
-      "
-      class="bg-red-300"
-    >
-      <NavbarWeb />
-    </nav>
+    <NavbarWeb />
 
-    <main>
+    <main class="z-10">
       <AlertWeb
         style="
           position: fixed;
@@ -23,8 +14,8 @@
         "
       />
       <DashboardWeb id="home" />
-      <!-- <AboutWeb id="about" />
-      <ProjectWeb id="project" />
+      <AboutWeb id="about" />
+      <!--   <ProjectWeb id="project" />
       <ThecnologyWeb />
       <ContactMeVue id="contact" /> -->
     </main>
@@ -35,7 +26,7 @@
 </template>
 
 <script setup>
-// import AboutWeb from '../layout/AboutWeb.vue';
+import AboutWeb from '../layout/AboutWeb.vue';
 // import ContactMeVue from '../layout/ContactmeWeb.vue';
 import DashboardWeb from '../layout/HomeWeb.vue';
 // import ProjectWeb from '../layout/ProjectWeb.vue';

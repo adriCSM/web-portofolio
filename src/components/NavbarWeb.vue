@@ -1,37 +1,32 @@
 <template>
-  <div>
-    <div>
-      <div cols="10" sm="2" class="text-start pa-0" align-self="center">
+  <nav class="bg-nav fixed w-full">
+    <div class="flex flex-row h-nav items-center justify-between">
+      <div class="ms-10">
         <router-link class="text-white" to="#home">
-          <button class="font-weight-black light_blue tilt" variant="text">
-            <span class="text-capitalize">Adri </span> CSM
-          </button>
+          <button class="tilt"><span class="text-light-blue">Adri </span> CSM</button>
         </router-link>
       </div>
 
-      <div cols="2">
-        <ul>
-          <button variant="text" @click="klik" style="position: absolute; right: 0; top: 0">
-            <i color="white" size="25" v-if="show"> mdi-close </i>
-            <i color="white" size="30" v-else> mdi-menu </i>
-          </button>
-        </ul>
-      </div>
-      <div class="pt-0 ps-0 pb-0" cols="auto">
-        <div class="pa-0 shrink">
-          <ul class="d-flex pa-0 justify-end">
-            <li class="pa-0" v-for="item in data" :key="item">
-              <router-link class="text-white" aria-current="page" :to="item.to">
-                <button class="w-auto text-capitalize" id="button" variant="text">
-                  {{ item.name }}
-                </button>
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <!-- <div class="">
+      <ul>
+        <button variant="text" @click="klik" style="position: absolute; right: 0; top: 0">
+          <i color="white" size="25" v-if="show"> mdi-close </i>
+          <i color="white" size="30" v-else> mdi-menu </i>
+        </button>
+      </ul>
+    </div> -->
+
+      <ul class="flex flex-row gap-5 me-10 text-white">
+        <li v-for="item in data" :key="item">
+          <router-link :to="item.to">
+            <button class="font-normal">
+              {{ item.name }}
+            </button>
+          </router-link>
+        </li>
+      </ul>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -69,3 +64,22 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+nav {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(25px);
+}
+nav a {
+  color: white;
+}
+
+/* nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+.active {
+  color: #0fe;
+  text-shadow: 0 0 1rem #0fe;
+} */
+</style>
