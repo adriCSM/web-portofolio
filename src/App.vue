@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <div>
     <router-view></router-view>
-  </v-app>
+  </div>
 </template>
 
 <script setup>
@@ -20,23 +20,8 @@ onMounted(() => {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
-#app {
-  font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
 .light_blue {
   color: #0fe;
-}
-
-nav {
-  position: fixed;
-  width: 100vw;
-  z-index: 1;
 }
 
 nav a {

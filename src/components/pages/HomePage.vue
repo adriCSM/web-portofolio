@@ -5,9 +5,8 @@
         background-color: #1f242d05;
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: (25px);
-        height: 60px;
       "
-      class="d-fixed pa-0"
+      class="bg-red-300"
     >
       <NavbarWeb />
     </nav>
@@ -41,8 +40,8 @@
 import DashboardWeb from '../layout/HomeWeb.vue';
 // import ProjectWeb from '../layout/ProjectWeb.vue';
 // import ThecnologyWeb from '../layout/ThecnologyWeb.vue';
-// import NavbarWeb from '../NavbarWeb.vue';
-// import FooterWebVue from '../FooterWeb.vue';
+import NavbarWeb from '../NavbarWeb.vue';
+import FooterWebVue from '../FooterWeb.vue';
 import AlertWeb from '../AlertWeb.vue';
 import { onMounted } from 'vue';
 import Typed from 'typed.js';
@@ -63,20 +62,4 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-.home_img {
-  animation: bounch 4s ease-in-out infinite;
-}
-
-@keyframes bounch {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(2.4rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-</style>
+<style scoped></style>

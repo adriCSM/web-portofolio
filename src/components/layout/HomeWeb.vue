@@ -1,8 +1,8 @@
 <template>
-  <section :style="{ backgroundColor: '#1f242d', minHeight: '100vh' }">
-    <v-container class="h-screen">
-      <v-row class="text-white d-flex align-center">
-        <v-col cols="12" md="8" sm="8" class="content-home">
+  <section class="min-h-full bg-emerald-500">
+    <div class="h-screen">
+      <div class="text-white d-flex align-center">
+        <div cols="12" md="8" sm="8" class="content-home">
           <h3 class="pa-2 font-weight-black">Hallo...👋, My name is</h3>
           <h1 class="pa-2 font-weight-black">Adri C.S Mangidi</h1>
 
@@ -13,42 +13,44 @@
           </p>
           <div>
             <a href="https://web.facebook.com/adricandrasaputramangidi" target="_blank">
-              <v-icon color="#0fe" size="40" class="mx-2 my-2">mdi-facebook</v-icon>
+              <i color="#0fe" size="40" class="mx-2 my-2">mdi-facebook</i>
             </a>
             <a href="https://www.instagram.com/adri_csm/" target="_blank">
-              <v-icon color="#0fe" size="40" class="mx-2 my-2">mdi-instagram</v-icon>
+              <i color="#0fe" size="40" class="mx-2 my-2">mdi-instagram</i>
             </a>
             <a href="https://www.linkedin.com/in/adri-candra-saputra-m-9696a3195/" target="_blank">
-              <v-icon color="#0fe" size="40" class="mx-2 my-2">mdi-linkedin</v-icon>
+              <i color="#0fe" size="40" class="mx-2 my-2">mdi-linkedin</i>
             </a>
             <a href="mailto:adricandrasaputramangidi@gmail.com">
-              <v-icon color="#0fe" size="40" class="mx-2 my-2">mdi-email-outline</v-icon>
+              <i color="#0fe" size="40" class="mx-2 my-2">mdi-email-outline</i>
             </a>
             <a href=" https://github.com/adriCSM" target="_blank">
-              <v-icon color="#0fe" size="40" class="px-3">mdi-github</v-icon>
+              <i color="#0fe" size="40" class="px-3">mdi-github</i>
             </a>
           </div>
 
-          <a :href="'../../assets/cv.png'" download="Adri Candra Saputra Mangidi">
-            <v-btn
+          <a href="'../../assets/cv.png'" download="Adri Candra Saputra Mangidi">
+            <button
               class="rounded-pill text-black font-weight-bold my-5 me-2 tilt"
               :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
-              ><v-icon>mdi-download</v-icon>Download CV 1
-            </v-btn></a
+            >
+              <i>mdi-download</i>Download CV 1
+            </button></a
           >
-          <a :href="'../../assets/CV_Programming.png'" download="Adri Candra Saputra Mangidi">
-            <v-btn
+          <a href="'../../assets/CV_Programming.png'" download="Adri Candra Saputra Mangidi">
+            <button
               class="rounded-pill text-black font-weight-bold my-5 tilt"
               :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
-              ><v-icon>mdi-download</v-icon>Download CV 2
-            </v-btn></a
+            >
+              <i>mdi-download</i>Download CV 2
+            </button></a
           >
-        </v-col>
-        <v-col cols="12 " md="4" sm="4" class="home_img">
-          <v-img src="../../assets/adri.png" alt="Adri Candra Saputra Mangidi" />
-        </v-col>
-      </v-row>
-    </v-container>
+        </div>
+        <div cols="12 " md="4" sm="4" class="home_img">
+          <img src="../../assets/adri.png" alt="Adri Candra Saputra Mangidi" width="100" />
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 

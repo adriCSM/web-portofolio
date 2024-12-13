@@ -4,14 +4,14 @@
     <span class="light_blue">Adri Candra Saputra Mangidi</span>
 
     <router-link to="#home" style="position: absolute; right: 0; bottom: 0" class="my-5">
-      <v-btn variant="text" class="pe-0" color="black">
+      <button variant="text" class="pe-0" color="black">
         <div
           class="rounded-circle d-inline-block"
           style="background-color: #0fe; box-shadow: 0 0 1rem #0fe"
         >
-          <v-icon size="25"> mdi-arrow-up </v-icon>
+          <i size="25"> mdi-arrow-up </i>
         </div>
-      </v-btn>
+      </button>
     </router-link>
   </div>
 </template>
