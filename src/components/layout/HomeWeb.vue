@@ -9,7 +9,7 @@
       <p class="pt-2 font-normal text-xl">
         And, I am a Fresh Graduate Mining Engineering from Haluoleo University
       </p>
-      <div class="text-xl text-light-blue text-5xl flex gap-5 items-center my-3">
+      <div class="text-light-blue text-5xl flex gap-5 items-center my-3">
         <a href="https://web.facebook.com/adricandrasaputramangidi" target="_blank">
           <i class="fab fa-facebook"></i>
         </a>
@@ -27,7 +27,7 @@
         </a>
       </div>
 
-      <div class="text-lg text-black font-light">
+      <div class="text-lg text-black font-normal">
         <a href="'../../assets/cv.png'" download="Adri Candra Saputra Mangidi">
           <button
             class="rounded-full py-1 px-3 my-5 me-2 tilt"
@@ -46,7 +46,7 @@
         >
       </div>
     </div>
-    <div cols="12 " md="4" sm="4" class="home_img">
+    <div class="home_img">
       <img src="../../assets/adri.png" alt="Adri Candra Saputra Mangidi" width="400" />
     </div>
   </section>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-nav fixed w-full">
+  <nav class="bg-nav fixed w-full z-50">
     <div class="flex flex-row h-nav items-center justify-between">
       <div class="ms-10">
         <router-link class="text-white" to="#home">

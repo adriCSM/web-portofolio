@@ -1,16 +1,11 @@
 <template>
-  <div style="background-color: #1f242d" class="pa-0">
+  <div style="background-color: #1f242d" class="py-3 relative">
     <p class="text-white">Copyright &copy; {{ new Date().getFullYear() }} by</p>
     <span class="light_blue">Adri Candra Saputra Mangidi</span>
 
-    <router-link to="#home" style="position: absolute; right: 0; bottom: 0" class="my-5">
-      <button variant="text" class="pe-0" color="black">
-        <div
-          class="rounded-circle d-inline-block"
-          style="background-color: #0fe; box-shadow: 0 0 1rem #0fe"
-        >
-          <i size="25"> mdi-arrow-up </i>
-        </div>
+    <router-link to="#home" class="absolute bottom-5 right-5">
+      <button class="bg-light-blue shadow-back-light p-2 text-black rounded-full h-10 w-10">
+        <i class="fa fa-arrow-up"> </i>
       </button>
     </router-link>
   </div>

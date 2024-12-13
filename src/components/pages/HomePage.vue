@@ -15,9 +15,9 @@
       />
       <DashboardWeb id="home" />
       <AboutWeb id="about" />
-      <!--   <ProjectWeb id="project" />
+      <ProjectWeb id="project" />
       <ThecnologyWeb />
-      <ContactMeVue id="contact" /> -->
+      <!-- <ContactMeVue id="contact" /> -->
     </main>
     <footer>
       <FooterWebVue />
@@ -29,8 +29,8 @@
 import AboutWeb from '../layout/AboutWeb.vue';
 // import ContactMeVue from '../layout/ContactmeWeb.vue';
 import DashboardWeb from '../layout/HomeWeb.vue';
-// import ProjectWeb from '../layout/ProjectWeb.vue';
-// import ThecnologyWeb from '../layout/ThecnologyWeb.vue';
+import ProjectWeb from '../layout/ProjectWeb.vue';
+import ThecnologyWeb from '../layout/ThecnologyWeb.vue';
 import NavbarWeb from '../NavbarWeb.vue';
 import FooterWebVue from '../FooterWeb.vue';
 import AlertWeb from '../AlertWeb.vue';

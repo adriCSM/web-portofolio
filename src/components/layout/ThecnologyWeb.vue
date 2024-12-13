@@ -1,68 +1,61 @@
 <template>
   <div class="h-auto py-10 bg-blue-grey-darken-3">
-    <v-container class="h-auto">
-      <h1 class="pa-1 font-weight-black pb-3 heading" :class="data.h1">
+    <div class="h-auto">
+      <h1 class="pa-1 font-weight-black pb-3 heading">
         <span class="light_blue">Technology</span> Studied
       </h1>
-      <v-divider></v-divider>
+      <div class="divider"></div>
       <p class="pa-1 pt-3">
         <span class="teknologi"></span>
       </p>
-      <v-row class="techno">
-        <v-col cols="12">
-          <v-tooltip :text="item.name" location="bottom" v-for="item in icon" :key="item">
-            <template v-slot:activator="{ props }">
-              <v-icon
-                v-bind="props"
-                color="#0fe"
-                :size="data.size"
-                class="mx-5 my-10 tilt"
-                :style="{ boxShadow: '0 0 1rem #0fe' }"
-              >
-                {{ item.icons }}
-              </v-icon>
-            </template>
-          </v-tooltip>
-          <v-divider class="border-opacity-0"></v-divider>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col cols="6">
-          <v-tooltip text="Node JS Framework" location="top">
-            <template v-slot:activator="{ props }">
-              <v-icon
-                v-bind="props"
-                color="#0fe"
-                size="50"
-                class="mx-3 tilt"
-                :style="{ textShadow: '0 0 1rem #0fe' }"
-              >
-                <h6>
-                  <span>Express</span>
-                </h6>
-              </v-icon>
-            </template>
-          </v-tooltip>
-        </v-col>
-        <v-col cols="6">
-          <v-tooltip text="Node JS Framework" location="top">
-            <template v-slot:activator="{ props }">
-              <v-icon
-                v-bind="props"
-                color="#0fe"
-                size="50"
-                class="mx-3 tilt"
-                :style="{ textShadow: '0 0 1rem #0fe' }"
-              >
-                <h6>
-                  <span>Hapi</span>
-                </h6>
-              </v-icon>
-            </template>
-          </v-tooltip>
-        </v-col>
-      </v-row>
-    </v-container>
+      <div class="techno">
+        <div cols="12">
+          <div class="tooltip" :text="item.name" location="bottom" v-for="item in icon" :key="item">
+            <i
+              v-bind="item"
+              color="#0fe"
+              class="mx-5 my-10 tilt"
+              :style="{ boxShadow: '0 0 1rem #0fe' }"
+            >
+              {{ item.icons }}
+            </i>
+          </div>
+          <div class="divider border-opacity-0"></div>
+        </div>
+      </div>
+      <div>
+        <div cols="6">
+          <div class="tooltip" text="Node JS Framework" location="top">
+            <i
+              v-bind="item"
+              color="#0fe"
+              size="50"
+              class="mx-3 tilt"
+              :style="{ textShadow: '0 0 1rem #0fe' }"
+            >
+              <h6>
+                <span>Express</span>
+              </h6>
+            </i>
+          </div>
+        </div>
+        <div cols="6">
+          <div class="tooltip" text="Node JS Framework" location="top">
+            <i
+              v-bind="item"
+              color="#0fe"
+              size="50"
+              class="mx-3 tilt"
+              :style="{ textShadow: '0 0 1rem #0fe' }"
+            >
+              <h6>
+                <span>Hapi</span>
+              </h6>
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script setup>
@@ -92,19 +85,6 @@ const icon = computed(() => [
     icons: 'mdi-nodejs',
   },
 ]);
-const data = computed(() => {
-  if (vuetify.display.width.value < 600) {
-    return {
-      h1: 'text-h5',
-      size: '80',
-    };
-  } else {
-    return {
-      h1: 'text-h4',
-      size: '150',
-    };
-  }
-});
 
 onMounted(() => {
   const typed = new Typed('.teknologi', {

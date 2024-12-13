@@ -7,6 +7,8 @@ export default {
       backgroundColor: {
         nav: '#1f242d05',
         home: '#1f242d',
+        about: '#37474f',
+        'light-blue': '#0fe',
       },
       height: {
         nav: '60px',
