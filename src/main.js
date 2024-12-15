@@ -12,10 +12,10 @@ import 'aos/dist/aos.css';
 
 AOS.init({
   easing: 'ease-in-out',
-  anchorPlacement: 'center-center',
+  anchorPlacement: 'top-bottom',
   duration: 800,
 });
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
-createApp(App).use(VueSweetalert2).use(router).use(store).mount('#app');
+createApp(App).use(router).use(store).use(VueSweetalert2).mount('#app');

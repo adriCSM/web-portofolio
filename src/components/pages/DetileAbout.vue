@@ -1,20 +1,20 @@
 <template>
-  <div class="bg-blue-grey-darken-3 min-h-[100vh]">
+  <div class="bg-home min-h-svh px-20">
     <nav class="flex justify-start p-2 md:p-5">
-      <v-btn variant="text" color="black" to="/#about">
+      <router-link to="/#about">
         <div
-          class="rounded-circle d-inline-block"
-          style="background-color: #0fe; box-shadow: 0 0 1rem #0fe"
+          class="rounded-full px-3 py-2 bg-light-blue animate-bounce shadow-back-light cursor-pointer"
         >
-          <v-icon size="25"> mdi-arrow-left </v-icon>
+          <i class="fa fa-arrow-left text-xl text-black"> </i>
         </div>
-      </v-btn>
+      </router-link>
     </nav>
-    <section class="flex flex-col justify-center align-center mt-6 h-auto">
-      <v-img src="../../assets/adri.png" alt="adri" width="500" height="500" />
+    <section class="flex flex-col justify-center items-center mt-6 h-auto">
+      <img src="../../assets/adri.png" alt="adri" width="500" height="500" />
+      <p class="text-3xl font-bold py-10">Adri Candra Saputra Mangidi, S.T.</p>
       <p class="text-2xl py-2 font-bold"><span class="typing1 text-teal-300"></span></p>
     </section>
-    <v-container>
+    <section>
       <section>
         <h1 class="text-3xl font-bold bg-teal-300 text-black p-1 mb-3 mt-5 rounded-md">Keahlian</h1>
         <div class="flex justify-between gap-5">
@@ -64,10 +64,10 @@
           </div>
         </article>
       </section>
-    </v-container>
-    <v-container>
+    </section>
+    <section>
       <h1>Sertifikat</h1>
-    </v-container>
+    </section>
   </div>
 </template>
 
@@ -79,7 +79,7 @@ onMounted(() => {
   const el = document.querySelector('.typing1');
   if (el) {
     const typed = new Typed(el, {
-      strings: ['Adri Candra Saputra Mangidi, S.T.'],
+      strings: ['Fresh Graduate of Mining Engineer'],
       typeSpeed: 200,
       backSpeed: 200,
       backDelay: 1000,

@@ -1,5 +1,5 @@
 <template>
-  <section class="flex justify-center items-center bg-home md:h-svh px-10">
+  <section class="flex justify-center items-center bg-home p-10 overflow-x-hidden">
     <div class="md:w-3/5">
       <h1 class="font-bold heading text-3xl py-3" data-aos="zoom-in">
         Contact <span class="text-light-blue">Me</span>
@@ -15,7 +15,7 @@
             placeholder="Type your full name"
             variant="outlined"
             label="Fullname"
-            class="w-full p-4 rounded-md bg-transparent border border-light-blue"
+            class="w-full p-4 rounded-md bg-about border border-light-blue"
           />
         </div>
         <div class="gap-4 flex text-light-blue mt-4" data-aos="fade-left">
@@ -27,7 +27,7 @@
             placeholder="Type your email address"
             variant="outlined"
             label="Email"
-            class="w-full p-4 rounded-md bg-transparent border border-light-blue"
+            class="w-full p-4 rounded-md bg-about border border-light-blue"
           />
           <input
             type="number"
@@ -35,20 +35,16 @@
             required
             v-model="pesan.mobileNumber"
             placeholder="Type your mobile number"
-            variant="outlined"
             label="Mobile Number"
-            class="w-full p-4 rounded-md bg-transparent border border-light-blue"
+            class="w-full p-4 rounded-md bg-about border border-light-blue"
           />
         </div>
-        <input
+        <textarea
           type="text"
-          name="message"
           required
           v-model="pesan.message"
           placeholder="Type your message"
-          variant="outlined"
-          label="Message"
-          class="w-full p-4 mt-4 rounded-md bg-transparent border border-light-blue h-48"
+          class="w-full p-4 mt-4 rounded-md bg-about border border-light-blue h-48"
           counter="500"
           rows="7"
           data-aos="fade-right"
@@ -88,7 +84,7 @@ const send = async () => {
   await axios
     .post(
       '/portofolio/messages',
-      { ...pesan.value },
+      { ...pesan.value, mobileNumber: '0' + pesan.value.mobileNumber.toString() },
       {
         headers: {
           Accept: ['aplication/json'],

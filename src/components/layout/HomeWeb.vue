@@ -5,9 +5,9 @@
       data-aos="zoom-in"
     >
       <p class="py-2">Hallo...👋, My name is</p>
-      <h1 class="py-2">Adri C.S Mangidi</h1>
+      <p class="py-2">Adri C.S Mangidi</p>
 
-      <h3 class="py-2">I'am <span class="text-light-blue typing2"></span></h3>
+      <p class="py-2 text-md md:text-2xl">I'am <span class="text-light-blue typing2"></span></p>
 
       <p class="pt-2 font-normal text-xl">
         And, I am a Fresh Graduate Mining Engineering from Haluoleo University
@@ -30,7 +30,7 @@
         </a>
       </div>
 
-      <div class="text-lg text-black font-normal">
+      <div class="text-lg text-black font-normal flex md:flex-row flex-col md:gap-3 pb-5">
         <a href="'../../assets/cv.png'" download="Adri Candra Saputra Mangidi">
           <button class="rounded-full py-1 px-3 my-5 tilt bg-light-blue shadow-back-light">
             <i class="fa fa-download me-3 animate-bounce"></i>Download CV 1
@@ -61,7 +61,7 @@ onMounted(() => {
   const el = document.querySelector('.typing2');
   if (el) {
     const typed = new Typed(el, {
-      strings: ['Programer', 'Backend Developer'],
+      strings: ['Engineer', 'Web Developer'],
       typeSpeed: 200,
       backSpeed: 200,
       backDelay: 1000,

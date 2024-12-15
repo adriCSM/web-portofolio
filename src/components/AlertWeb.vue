@@ -42,35 +42,56 @@ const timer = (mutation) => {
     <div>
       <div
         v-if="error"
-        border="start"
-        class="text-start bg-red-500 text-white rounded-xl capitalize p-3 w-auto pt-5"
+        class="text-start bg-red-500 text-white rounded-t-xl capitalize p-3 w-auto pt-3 relative"
       >
+        <i class="fa fa-exclamation-triangle"></i>
         {{ error }}
-        <div class="progress" color="white" absolute location="bottom"></div>
+        <progress
+          :value="progres_linear"
+          max="100"
+          class="h-1 rounded-full w-full absolute bottom-0 left-0 z-50"
+        ></progress>
       </div>
 
       <div
         v-if="success"
-        color="success"
-        elevation="2"
-        type="success"
-        border="start"
-        class="alert text-start text-white font-weight-light pa-3 mx-5 mt-5"
+        class="text-start bg-green-500 text-white rounded-t-xl capitalize p-3 w-auto pt-3 relative"
       >
+        <i class="fa fa-circle-check"></i>
         {{ success }}
-        <div class="progress" color="white" absolute location="bottom"></div>
+        <progress
+          :value="progres_linear"
+          max="100"
+          class="h-1 rounded-full w-full absolute bottom-0 left-0 z-50"
+        ></progress>
       </div>
       <div
         v-if="info"
-        color="info"
-        elevation="2"
-        type="info"
-        border="start"
-        class="alert text-start text-white text-capitalize pa-3 mx-10 mt-5"
+        class="text-start bg-orange-500 text-white rounded-t-xl capitalize p-3 w-auto pt-3 relative"
       >
+        <i class="fa fa-exclamation-circle"></i>
         {{ info }}
-        <div class="progress" color="white" absolute location="bottom"></div>
+        <progress
+          :value="progres_linear"
+          max="100"
+          class="h-1 rounded-full w-full absolute bottom-0 left-0 z-50"
+        ></progress>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+progress {
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+  border-radius: 9999px;
+}
+
+progress::-webkit-progress-value {
+  background-color: white;
+}
+</style>

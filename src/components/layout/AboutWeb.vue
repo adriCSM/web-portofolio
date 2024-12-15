@@ -27,7 +27,7 @@
 
       <button
         class="rounded-full text-black font-bold my-10 px-5 py-1 bg-light-blue tilt shadow-back-light"
-        to="/about"
+        @click="() => router.push('/about')"
       >
         Read more...
       </button>
@@ -36,15 +36,18 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue';
-
+import { onMounted } from 'vue';
+import router from '../../router';
 import Typed from 'typed.js';
 
 onMounted(() => {
   const el = document.querySelector('.title');
   if (el) {
     const typed = new Typed(el, {
-      strings: ['<span class="text-light-blue">Backend</span> Developer'],
+      strings: [
+        '<span class="text-light-blue">Engineer</span> ',
+        '<span class="text-light-blue">Web</span> Developer',
+      ],
       typeSpeed: 200,
       backSpeed: 200,
       backDelay: 1000,

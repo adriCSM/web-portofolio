@@ -1,14 +1,12 @@
 <template>
-  <!-- <NavbarWeb /> -->
+  <NavbarWeb />
 
-  <!-- <AlertWeb class="fixed top-8 right-0 z-50 min-h-full max-w-[400px]" /> -->
-
-  />
-  <!-- <DashboardWeb id="home" /> -->
-  <!-- <AboutWeb id="about" />
-      <ProjectWeb id="project" />
-      <ThecnologyWeb />
-      <ContactMeVue id="contact" /> -->
+  <AlertWeb class="fixed top-20 z-50 left-5 min-h-full max-w-[400px]" />
+  <DashboardWeb id="home" />
+  <AboutWeb id="about" />
+  <ProjectWeb id="project" />
+  <ThecnologyWeb />
+  <ContactMeVue id="contact" />
 
   <footer>
     <FooterWebVue />
