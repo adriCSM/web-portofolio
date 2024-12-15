@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-home min-h-svh px-20">
+  <div class="bg-home min-h-svh p-10 md:px-20 md:pb-20">
     <nav class="flex justify-start p-2 md:p-5">
       <router-link to="/#about">
         <div
@@ -9,7 +9,7 @@
         </div>
       </router-link>
     </nav>
-    <section class="flex flex-col justify-center items-center mt-6 h-auto">
+    <section class="flex flex-col justify-center items-center h-auto">
       <img src="../../assets/adri.png" alt="adri" width="500" height="500" />
       <p class="text-3xl font-bold py-10">Adri Candra Saputra Mangidi, S.T.</p>
       <p class="text-2xl py-2 font-bold"><span class="typing1 text-teal-300"></span></p>
@@ -17,9 +17,9 @@
     <section>
       <section>
         <h1 class="text-3xl font-bold bg-teal-300 text-black p-1 mb-3 mt-5 rounded-md">Keahlian</h1>
-        <div class="flex justify-between gap-5">
-          <article class="w-1/2">
-            <h1>Pertambangan</h1>
+        <div class="flex flex-col md:flex-row justify-between gap-5">
+          <article class="md:w-1/2">
+            <p class="text-xl font-bold text-light-blue py-3">Pertambangan</p>
             <p class="text-justify">
               Saya merupakan lulusan dari Jurusan Teknik Pertambangan, Universitas Halu Oleo 4
               Oktober 2024 dengan mengambil judul penelitian "Estimasi Cadangan Endapan Nikel
@@ -36,8 +36,8 @@
               <li>Micromine</li>
             </ul>
           </article>
-          <article class="w-1/2">
-            <h1>Programing</h1>
+          <article class="md:w-1/2">
+            <p class="text-xl font-bold text-light-blue py-3">Programing</p>
             <p class="text-justify">
               Selain dari pendidikan pada teknik pertambangan yang saya tempuh, saya juga memiliki
               ketertarikan dalam bidang pemrograman, dimana saya mempelajari bahasa pemrograman
