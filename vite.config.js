@@ -13,7 +13,7 @@ import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }) => {
   // Load env variables
-  const env = loadEnv(mode, process.cwd(), 'VUE_APP'); // Load only VITE_ prefixed variables
+  const env = loadEnv(mode, process.cwd(), ''); // Load only VITE_ prefixed variables
 
   return {
     plugins: [vue()],

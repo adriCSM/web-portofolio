@@ -1,88 +1,68 @@
 <template>
-  <div class="h-auto py-10 bg-blue-grey-darken-3">
-    <div class="h-auto">
-      <h1 class="pa-1 font-weight-black pb-3 heading">
-        <span class="light_blue">Technology</span> Studied
-      </h1>
-      <div class="divider"></div>
-      <p class="pa-1 pt-3">
-        <span class="teknologi"></span>
-      </p>
-      <div class="techno">
-        <div cols="12">
-          <div class="tooltip" :text="item.name" location="bottom" v-for="item in icon" :key="item">
-            <i
-              v-bind="item"
-              color="#0fe"
-              class="mx-5 my-10 tilt"
-              :style="{ boxShadow: '0 0 1rem #0fe' }"
-            >
-              {{ item.icons }}
-            </i>
-          </div>
-          <div class="divider border-opacity-0"></div>
-        </div>
+  <div class="h-auto py-10 bg-about flex justify-center">
+    <div class="md:w-4/6 px-10">
+      <div class="divide-y divide-gray-500">
+        <h1 class="font-bold heading text-3xl pb-3" data-aos="fade-up">
+          <span class="text-light-blue">Technology</span> Studied
+        </h1>
+
+        <p class="pt-3 pb-5" data-aos="fade-up" data-aos-delay="200">
+          <span class="teknologi"></span>
+        </p>
       </div>
-      <div>
-        <div cols="6">
-          <div class="tooltip" text="Node JS Framework" location="top">
-            <i
-              v-bind="item"
-              color="#0fe"
-              size="50"
-              class="mx-3 tilt"
-              :style="{ textShadow: '0 0 1rem #0fe' }"
-            >
-              <h6>
-                <span>Express</span>
-              </h6>
-            </i>
-          </div>
-        </div>
-        <div cols="6">
-          <div class="tooltip" text="Node JS Framework" location="top">
-            <i
-              v-bind="item"
-              color="#0fe"
-              size="50"
-              class="mx-3 tilt"
-              :style="{ textShadow: '0 0 1rem #0fe' }"
-            >
-              <h6>
-                <span>Hapi</span>
-              </h6>
-            </i>
-          </div>
+
+      <div
+        class="flex justify-center gap-10 mt-5 flex-wrap"
+        data-aos="zoom-in-up"
+        data-aos-delay="400"
+      >
+        <div v-for="(item, index) in icons" :key="index">
+          <i
+            id="item.id"
+            class="text-light-blue shadow-back-light text-3xl md:text-9xl p-3 w-[70px] md:w-[150px] rounded-lg tilt"
+            :class="item.icons"
+          >
+          </i>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-import { computed, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
 import Typed from 'typed.js';
 
-const icon = computed(() => [
+const icons = ref([
   {
+    id: 'a',
     name: 'HTML',
-    icons: `mdi-language-html5`,
+    icons: `fab fa-html5`,
   },
   {
+    id: 'b',
     name: 'CSS',
-    icons: 'mdi-language-css3',
+    icons: 'fab fa-css3',
   },
   {
+    id: 'c',
     name: 'Javascript',
-    icons: 'mdi-language-javascript',
+    icons: 'fab fa-js',
   },
   {
+    id: 'd',
     name: 'Vue Js',
-    icons: 'mdi-vuejs',
+    icons: 'fab fa-vuejs',
   },
   {
+    id: 'e',
+    name: 'React Js',
+    icons: 'fab fa-react',
+  },
+  {
+    id: 'f',
     name: 'Node Js',
-    icons: 'mdi-nodejs',
+    icons: 'fab fa-node-js',
   },
 ]);
 

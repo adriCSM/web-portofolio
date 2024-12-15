@@ -1,10 +1,16 @@
 <template>
-  <section class="h-svh pt-12 bg-about flex items-center justify-center px-20">
-    <div class="w-1/2 flex justify-center">
-      <img class="tilt" src="../../assets/adri.png" alt="Adri Candra Saputra Mangidi" width="400" />
+  <section
+    class="md:h-svh pt-12 bg-about flex md:flex-row flex-col items-center justify-center px-10"
+  >
+    <div class="md:w-1/2 flex justify-center order-last md:order-first" data-aos="zoom-in-up">
+      <img
+        class="tilt w-[200px] md:w-[400px] pb-10"
+        src="../../assets/adri.png"
+        alt="Adri Candra Saputra Mangidi"
+      />
     </div>
-    <div class="w-1/2 text-start text-xl">
-      <p class="font-bold heading text-3xl">About <span class="text-light-blue">Me</span></p>
+    <div class="md:w-1/2 text-justify md:text-start text-xl" data-aos="zoom-in-up">
+      <p class="font-bold text-3xl">About <span class="text-light-blue">Me</span></p>
       <p class="font-bold text-xl py-3">
         <span class="title"></span>
       </p>

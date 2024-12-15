@@ -1,33 +1,23 @@
 <template>
-  <div>
-    <NavbarWeb />
+  <!-- <NavbarWeb /> -->
 
-    <main class="z-10">
-      <AlertWeb
-        style="
-          position: fixed;
-          top: 50px;
-          left: 0;
-          z-index: 1;
-          min-height: max-content;
-          max-width: 400px;
-        "
-      />
-      <DashboardWeb id="home" />
-      <AboutWeb id="about" />
+  <!-- <AlertWeb class="fixed top-8 right-0 z-50 min-h-full max-w-[400px]" /> -->
+
+  />
+  <!-- <DashboardWeb id="home" /> -->
+  <!-- <AboutWeb id="about" />
       <ProjectWeb id="project" />
       <ThecnologyWeb />
-      <!-- <ContactMeVue id="contact" /> -->
-    </main>
-    <footer>
-      <FooterWebVue />
-    </footer>
-  </div>
+      <ContactMeVue id="contact" /> -->
+
+  <footer>
+    <FooterWebVue />
+  </footer>
 </template>
 
 <script setup>
 import AboutWeb from '../layout/AboutWeb.vue';
-// import ContactMeVue from '../layout/ContactmeWeb.vue';
+import ContactMeVue from '../layout/ContactmeWeb.vue';
 import DashboardWeb from '../layout/HomeWeb.vue';
 import ProjectWeb from '../layout/ProjectWeb.vue';
 import ThecnologyWeb from '../layout/ThecnologyWeb.vue';
@@ -36,6 +26,7 @@ import FooterWebVue from '../FooterWeb.vue';
 import AlertWeb from '../AlertWeb.vue';
 import { onMounted } from 'vue';
 import Typed from 'typed.js';
+import VanillaTilt from 'vanilla-tilt';
 
 onMounted(() => {
   const el = document.querySelector('.typing');
@@ -50,6 +41,16 @@ onMounted(() => {
 
     typed.start();
   }
+});
+
+onMounted(() => {
+  VanillaTilt.init(document.querySelectorAll('.tilt'), {
+    axis: true,
+    scale: 1.1,
+    speed: 900,
+    max: 20,
+    transition: true,
+  });
 });
 </script>
 

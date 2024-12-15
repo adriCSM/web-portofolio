@@ -3,8 +3,19 @@ import App from './App.vue';
 import store from './store';
 import axios from 'axios';
 import router from './router/index.js';
+import AOS from 'aos';
+import VueSweetalert2 from 'vue-sweetalert2';
+
+import 'sweetalert2/dist/sweetalert2.min.css';
 import './index.css';
+import 'aos/dist/aos.css';
 
-axios.defaults.baseURL = import.meta.env.VUE_APP_API_URL;
+AOS.init({
+  easing: 'ease-in-out',
+  anchorPlacement: 'center-center',
+  duration: 800,
+});
 
-createApp(App).use(router).use(store).mount('#app');
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+
+createApp(App).use(VueSweetalert2).use(router).use(store).mount('#app');

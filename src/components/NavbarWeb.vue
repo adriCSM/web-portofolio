@@ -70,9 +70,6 @@ nav {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(25px);
 }
-nav a {
-  color: white;
-}
 
 /* nav a.router-link-exact-active {
   color: #42b983;

@@ -1,16 +1,13 @@
 <template>
-  <section
-    :style="{ backgroundColor: '#1f242d', minHeight: '100vh' }"
-    class="d-flex flex-column justify-center align-center"
-  >
-    <v-container class="pt-15">
-      <h1 class="pa-1 text-white font-weight-black heading" :class="data.h1">
-        Contact <span class="light_blue">Me</span>
+  <section class="flex justify-center items-center bg-home md:h-svh px-10">
+    <div class="md:w-3/5">
+      <h1 class="font-bold heading text-3xl py-3" data-aos="zoom-in">
+        Contact <span class="text-light-blue">Me</span>
       </h1>
 
-      <v-row class="my-10 contact" justify="center">
-        <v-col cols="12" md="10" class="py-0" sm="12">
-          <v-text-field
+      <div class="my-10">
+        <div class="gap-4 flex flex-col text-light-blue" data-aos="fade-right">
+          <input
             type="text"
             name="name"
             required
@@ -18,13 +15,11 @@
             placeholder="Type your full name"
             variant="outlined"
             label="Fullname"
-            :style="{ color: '#0fe' }"
-          >
-          </v-text-field>
-        </v-col>
-
-        <v-col cols="12" md="5" class="py-0" sm="6">
-          <v-text-field
+            class="w-full p-4 rounded-md bg-transparent border border-light-blue"
+          />
+        </div>
+        <div class="gap-4 flex text-light-blue mt-4" data-aos="fade-left">
+          <input
             type="email"
             name="email"
             required
@@ -32,12 +27,9 @@
             placeholder="Type your email address"
             variant="outlined"
             label="Email"
-            :style="{ color: '#0fe' }"
-          >
-          </v-text-field>
-        </v-col>
-        <v-col cols="12" md="5" class="py-0" sm="6">
-          <v-text-field
+            class="w-full p-4 rounded-md bg-transparent border border-light-blue"
+          />
+          <input
             type="number"
             name="No.Hp"
             required
@@ -45,44 +37,43 @@
             placeholder="Type your mobile number"
             variant="outlined"
             label="Mobile Number"
-            :style="{ color: '#0fe' }"
-          >
-          </v-text-field>
-        </v-col>
-
-        <v-col cols="12" md="10">
-          <v-textarea
-            type="text"
-            name="message"
-            required
-            v-model="pesan.message"
-            placeholder="Type your message"
-            variant="outlined"
-            label="Message"
-            :style="{ color: '#0fe' }"
-            counter="500"
-            rows="7"
-          >
-          </v-textarea>
-        </v-col>
-        <v-col cols="12">
-          <v-btn
-            class="rounded-pill text-black font-weight-bold tilt"
+            class="w-full p-4 rounded-md bg-transparent border border-light-blue"
+          />
+        </div>
+        <input
+          type="text"
+          name="message"
+          required
+          v-model="pesan.message"
+          placeholder="Type your message"
+          variant="outlined"
+          label="Message"
+          class="w-full p-4 mt-4 rounded-md bg-transparent border border-light-blue h-48"
+          counter="500"
+          rows="7"
+          data-aos="fade-right"
+        />
+        <div cols="12">
+          <button
+            class="rounded-full text-black font-bold tilt px-5 py-2 mt-10"
             :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
             @click="send"
-            >Send</v-btn
+            data-aos="fade-up"
           >
-        </v-col>
-      </v-row>
-    </v-container>
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
-import vuetify from '@/plugins/vuetify';
+import { ref } from 'vue';
+
 import { useStore } from 'vuex';
 import axios from 'axios';
+import swal from 'sweetalert2';
 
 const pesan = ref({
   name: '',
@@ -91,17 +82,6 @@ const pesan = ref({
   message: '',
 });
 
-const data = computed(() => {
-  if (vuetify.display.width.value < 600) {
-    return {
-      h1: 'text-h5',
-    };
-  } else {
-    return {
-      h1: 'text-h4',
-    };
-  }
-});
 const store = useStore();
 
 const send = async () => {

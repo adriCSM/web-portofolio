@@ -42,11 +42,8 @@ const timer = (mutation) => {
     <div>
       <div
         v-if="error"
-        color="red"
-        elevation="2"
-        type="warning"
         border="start"
-        class="text-start text-white text-capitalize pa-3 w-auto mx-10 mt-5"
+        class="text-start bg-red-500 text-white rounded-xl capitalize p-3 w-auto pt-5"
       >
         {{ error }}
         <div class="progress" color="white" absolute location="bottom"></div>
