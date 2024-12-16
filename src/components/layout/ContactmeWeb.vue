@@ -1,6 +1,6 @@
 <template>
   <section class="flex justify-center items-center bg-home p-10 overflow-x-hidden">
-    <div class="md:w-3/5">
+    <div class="w-full md:w-3/5">
       <h1 class="font-bold heading text-3xl py-3" data-aos="zoom-in">
         Contact <span class="text-light-blue">Me</span>
       </h1>
@@ -18,7 +18,7 @@
             class="w-full p-4 rounded-md bg-about border border-light-blue"
           />
         </div>
-        <div class="gap-4 flex text-light-blue mt-4" data-aos="fade-left">
+        <div class="gap-4 flex flex-col md:flex-row text-light-blue mt-4" data-aos="fade-left">
           <input
             type="email"
             name="email"

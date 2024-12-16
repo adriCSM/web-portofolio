@@ -19,6 +19,9 @@ export default {
       boxShadow: {
         'back-light': ' 0 0 1rem #0fe',
       },
+      dropShadow: {
+        'back-light': ' 0 0 1rem #0fe',
+      },
     },
   },
   variants: {

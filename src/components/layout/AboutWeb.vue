@@ -26,7 +26,7 @@
       </p>
 
       <button
-        class="rounded-full text-black font-bold my-10 px-5 py-1 bg-light-blue tilt shadow-back-light"
+        class="rounded-full text-black font-bold my-10 px-5 py-1 bg-light-blue hover:scale-110 transition-all duration-300 shadow-back-light"
         @click="() => router.push('/about')"
       >
         Read more...
