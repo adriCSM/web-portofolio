@@ -13,8 +13,6 @@
             required
             v-model="pesan.name"
             placeholder="Type your full name"
-            variant="outlined"
-            label="Fullname"
             class="w-full p-4 rounded-md bg-about border border-light-blue"
           />
         </div>
@@ -25,8 +23,6 @@
             required
             v-model="pesan.email"
             placeholder="Type your email address"
-            variant="outlined"
-            label="Email"
             class="w-full p-4 rounded-md bg-about border border-light-blue"
           />
           <input
@@ -35,8 +31,8 @@
             required
             v-model="pesan.mobileNumber"
             placeholder="Type your mobile number"
-            label="Mobile Number"
             class="w-full p-4 rounded-md bg-about border border-light-blue"
+            md:data-aos="fade-right"
           />
         </div>
         <textarea
@@ -51,10 +47,9 @@
         />
         <div cols="12">
           <button
-            class="rounded-full text-black font-bold tilt px-5 py-2 mt-10"
+            class="rounded-full text-black font-bold px-5 py-2 mt-5 md:tilt"
             :style="{ backgroundColor: '#0fe', boxShadow: '0 0 1rem #0fe' }"
             @click="send"
-            data-aos="fade-up"
           >
             Send
           </button>
