@@ -38,7 +38,7 @@
           class="w-full md:w-[400px] h-[250px] rounded-xl animate-pulse"
         >
           <div class="h-4/5 rounded-t-xl bg-gray-300">
-            <i class="fa-solid fa-image h-[400px]"></i>
+            <i class="fa-solid fa-image h-full text-[200px]"></i>
           </div>
           <div class="p-5 md:text-xl h-1/5 bg-about rounded-b-xl">
             <div class="h-2 bg-gray-700 rounded"></div>
