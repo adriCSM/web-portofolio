@@ -1,18 +1,12 @@
 <template>
   <div class="h-auto py-10 bg-about flex flex-col md:flex-row gap-5 md:gap-0 justify-center">
-    <div class="md:w-4/6 px-10">
-      <div class="divide-y divide-gray-500">
-        <h1 class="font-bold heading text-3xl pb-3" data-aos="fade-up">
-          <span class="text-light-blue">Software</span>
-        </h1>
-
-        <p class="pt-3 pb-5" data-aos="fade-up" data-aos-delay="200">
-          <span class="teknologi"></span>
-        </p>
-      </div>
+    <div class="md:w-1/2 px-10 divide-y divide-gray-500">
+      <h1 class="font-bold heading text-3xl pb-3" data-aos="fade-up">
+        <span class="text-light-blue">Software</span>
+      </h1>
 
       <div
-        class="flex justify-center gap-10 mt-5 flex-wrap"
+        class="flex justify-center gap-10 pt-5 flex-wrap"
         data-aos="zoom-in-up"
         data-aos-delay="400"
       >
@@ -23,26 +17,20 @@
             :style="{ backgroundImage: `url(${item.ref})` }"
           />
           <p
-            class="md:h-[30px] h-[50px] w-[70px] md:w-[150px] text-sm h-full rounded-b-lg bg-home text-light-blue justify-center flex items-center text-wrap text-ellipsis overflow-hidden"
+            class="md:h-[30px] h-[45px] w-[70px] md:w-[150px] text-sm h-full rounded-b-lg bg-home text-light-blue justify-center flex items-center text-wrap text-ellipsis overflow-hidden"
           >
             {{ item.name }}
           </p>
         </div>
       </div>
     </div>
-    <div class="md:w-4/6 px-10 mt-5 md:mt-0">
-      <div class="divide-y divide-gray-500">
-        <h1 class="font-bold heading text-3xl pb-3" data-aos="fade-up">
-          <span class="text-light-blue">Technology</span> Studied
-        </h1>
-
-        <p class="pt-3 pb-5" data-aos="fade-up" data-aos-delay="200">
-          <span class="teknologi2"></span>
-        </p>
-      </div>
+    <div class="md:w-1/2 px-10 mt-5 md:mt-0 divide-y divide-gray-500">
+      <h1 class="font-bold heading text-3xl pb-3" data-aos="fade-up">
+        <span class="text-light-blue">Technology</span> Studied
+      </h1>
 
       <div
-        class="flex justify-center gap-10 mt-5 flex-wrap"
+        class="flex justify-center gap-10 pt-5 flex-wrap"
         data-aos="zoom-in-up"
         data-aos-delay="400"
       >
@@ -130,30 +118,4 @@ const images = ref([
     name: 'Golbal Mapper',
   },
 ]);
-
-onMounted(() => {
-  const typed = new Typed('.teknologi', {
-    strings: [
-      'Dapat menggunakan teknologi HTML, CSS, Javascript, dan Node Js',
-      'Javascript Framework Vue, framework Node Js Express dan Hapi.',
-    ],
-    typeSpeed: 80,
-    backSpeed: 100,
-    backDelay: 100,
-    loop: true,
-  });
-  const typed2 = new Typed('.teknologi2', {
-    strings: [
-      'Dapat menggunakan teknologi HTML, CSS, Javascript, dan Node Js',
-      'Javascript Framework Vue, framework Node Js Express dan Hapi.',
-    ],
-    typeSpeed: 80,
-    backSpeed: 100,
-    backDelay: 100,
-    loop: true,
-  });
-
-  typed.start();
-  typed2.start();
-});
 </script>

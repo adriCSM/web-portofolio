@@ -32,12 +32,12 @@
 
       <div class="text-lg text-black font-normal flex md:flex-row flex-col md:gap-3 pb-5">
         <a href="'../../assets/cv.png'" download="Adri Candra Saputra Mangidi">
-          <button class="rounded-full py-1 px-3 my-5 tilt bg-light-blue shadow-back-light">
+          <button class="rounded-full py-1 px-3 my-5 bg-light-blue shadow-back-light">
             <i class="fa fa-download me-3 animate-bounce"></i>Download CV 1
           </button></a
         >
         <a href="'../../assets/CV_Programming.png'" download="Adri Candra Saputra Mangidi">
-          <button class="rounded-full py-1 px-3 my-5 tilt bg-light-blue shadow-back-light">
+          <button class="rounded-full py-1 px-3 my-5 bg-light-blue shadow-back-light">
             <i class="fa fa-download me-3 animate-bounce"></i>Download CV 2
           </button></a
         >

@@ -3,7 +3,7 @@
     <div class="flex flex-row h-nav items-center justify-between">
       <div class="flex ms-10 w-1/2 justify-start">
         <router-link class="text-white" to="#home">
-          <button class="tilt"><span class="text-light-blue">Adri </span> CSM</button>
+          <button><span class="text-light-blue">Adri </span> CSM</button>
         </router-link>
       </div>
 
